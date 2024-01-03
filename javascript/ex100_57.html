@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let arr = [];
+      let count = 0;
+
+      for (let i = 0; i <= 100; i++) {
+        // arr[i] => 숫자
+        // 1 => 문자
+        // arr[i]의 값들을 바꿔주어야 비교 가능
+        arr[i] = i.toString();
+        console.log(arr[i]);
+
+        if (arr[i].includes(i)) {
+          count++;
+        }
+      }
+      console.log(count);
+    </script>
+  </head>
+  <body></body>
+</html>

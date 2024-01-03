@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타입 변경하기 : number과 string</title>
+    <script>
+      //number -> string   String()
+      let myNum1 = 456;
+      console.log(typeof myNum1);
+      let myStr1 = String(myNum1);
+      console.log(typeof myStr1);
+
+      //string -> number   Number(), parseInt(), parseFloat()
+      let myStr2 = "123.45";
+      console.log(myStr2 + 2); //문자열 연결 / + 연산자는 자동으로 안바뀜
+      console.log(myStr2 * 2); //string타입이 number으로 변환
+      let myNum2 = Number(myStr2);
+      console.log(myNum2 * 2);
+
+      let myStr3 = "123.45";
+      let myNum3 = parseInt(myStr3);
+      console.log(myNum3);
+      console.log(typeof myNum3);
+
+      let myNum4 = parseFloat(myStr3);
+      console.log(myNum4);
+      console.log(typeof myNum4);
+    </script>
+  </head>
+  <body></body>
+</html>

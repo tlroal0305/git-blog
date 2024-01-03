@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>입력태그의 종류들</title>
+  </head>
+  <body>
+    <form action=" http://WWW.myserver.com" method="post">
+      <!-- label태그 : 입력 태그의 제목 표시 -->
+      <!-- fot속성 : label태그와 inputㅌ태그를 연결 -->
+      <label for="id">아이디</label>
+      <!-- type속성 : 입력되는 데이터의 타입 -->
+      <!-- name속성 : 서버의 매개변수와 연결 -->
+      <!-- id속성 : html문서상이 유일한 식별자 -->
+      <!-- value속성 : 입력된 실제값(초기값) -->
+      <!-- placeholder : 힌트 문구 -->
+      <input
+        type="text"
+        name="id"
+        id="id"
+        value=""
+        placeholder="아이디를 입력하세요"
+      /><br />
+      <label for="pw">암호</label>
+      <input
+        type="password"
+        name="pw"
+        id="pw"
+        value=""
+        placeholder="암호를 입력하세요"
+      /><br />
+
+      <!-- submit : 전송 버튼 -->
+      <input type="submit" value="로그인" /><br />
+
+      <!-- 체크 박스 : 여러개를 선택 가능-->
+      <!-- 서버에서는 String[] checkbox, name값을 같은 값으로 통일 -->
+      <input
+        type="checkbox"
+        name="checkbox"
+        id="check1"
+        value="ck1"
+        checked
+      /><label for="check1">체크박스1</label><br />
+      <input type="checkbox" name="checkbox" id="check2" value="ck2" /><label
+        for="check2"
+        >체크박스2</label
+      ><br />
+      <input type="checkbox" name="checkbox" id="check3" value="ck3" /><label
+        for="check3"
+        >체크박스3</label
+      ><br />
+
+      <!-- 라디오 버튼 : 여러개 중 하나만 선택 가능 -->
+      <!-- name 속성을 같은 값으로 통일 -->
+      <!-- 서버에성는 String radiobutton = "radio1" -->
+      <input type="radio" name="radiobutton" id="radio1" value="rd1" />
+      <label for="radio1">라디오버튼1</label><br />
+      <input type="radio" name="radiobutton" id="radio1" value="rd2" />
+      <label for="radio2">라디오버튼2</label><br />
+      <input type="radio" name="radiobutton" id="radio1" value="rd3" />
+      <label for="radio3">라디오버튼3</label><br />
+    </form>
+  </body>
+</html>

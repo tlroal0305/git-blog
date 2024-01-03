@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>상태 선택자</title>
+    <style>
+      input:enabled {
+        background-color: red;
+      }
+      input:disabled {
+        background-color: aquamarine;
+      }
+      input[type="checkbox"]:checked {
+        outline: 2 solid red;
+      }
+      input:focus {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>활성화 상태(기본)</h1>
+    <input type="text" />
+    <h1>비활성화 상태(입력, 클릭 불가)</h1>
+    <input type="text" disabled />
+    <h1>체크박스</h1>
+    <input type="checkbox" checked /><label>체크박스</label>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- ex05 -->
+    <title>연습문제2</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(() => {
+        //연습문제2
+        //Jquery를 이용하여, 속성 type = text인 것을
+        // 선택하여, 값을 'Hello jQuery!'로 입력(설정)하시오.
+        //힌트:val()함수 : val('홍길동') - 설정, .val() - 가져오기
+        $("input[type=text]").val("Hello jQuery!");
+
+        //연습문제3
+        // 그다음, 설정된 값('Hello jQuery!')을 가져와서
+        // console.log로 출력하시오.
+        let value = $("input[type=text]").val();
+        console.log(value);
+
+        //연습문제4
+        //radio와 checkbox의 체크여부를 console.log로
+        //true/false로 출력하시오.
+        //힌트:is(":checked")함수 이용
+
+        // true/false 값을 출력함
+        console.log($("input[type=radio]").is(":checked"));
+        console.log($("input[type=checkbox]").is(":checked"));
+
+        //radio와 checkbox를 모두 true로 설정하시오.
+        //힌트:attr("checked", true) 함수 이용
+        //     또는 prop("checked", true) 함수 이용
+        $("input[type=radio]").attr("checked", true);
+        $("input[type=checkbox]").attr("checked", true);
+      });
+
+      //이벤트 선택자
+      $(() => {
+        //클릭 이벤트
+        $("button").click(function () {
+          this.innerHTML = "클릭";
+        });
+
+        //값 변경 이벤트
+        $("input[type=checkbox]").change(function () {
+          console.log("변경" + $("input[type=checkbox]").is(":checked"));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label>아이디</label> <input type="text" /><br />
+    <label>암호</label> <input type="password" /><br />
+    <input type="radio" /> <label>라디오버튼</label><br />
+    <input type="checkbox" checked /> <label>체크버튼</label><br />
+    <input type="file" />
+    <button>버튼</button>
+  </body>
+</html>

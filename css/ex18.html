@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>부정 선택자 - not()선택자</title>
+    <style>
+      input[type="password"] {
+        background-color: red;
+      }
+
+      input:not([type="password"]) {
+        background-color: aquamarine;
+      }
+      body :not(h1) {
+        color: green;
+        /* 글꼴 굵기 */
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" /><br />
+    <input type="password" /><br />
+    <input type="text" /><br />
+    <input type="password" /><br />
+    <h1>제목 태그 h1</h1>
+    <p>문단 태그p</p>
+  </body>
+</html>

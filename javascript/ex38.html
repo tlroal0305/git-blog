@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>마우스클릭 연습문제</title>
+    <script>
+      //연습문제
+      //버튼A가 클릭될때, count-a에 현재 카운트를 +1를 올리시오.
+      //버튼B가 클릭될때, count-b에 현재 카운트를 +1를 올리시오.
+      //힌트: span태그의 카운트를 읽어서 +1을 하시오.
+      //      Number(counterA.innerHTML)
+      window.onload = function () {
+        let Abutton = document.getElementById("button-a");
+        let counterA = document.getElementById("counter-a");
+
+        Abutton.onclick = () => {
+          counterA.innerHTML = String(Number(counterA.innerHTML) + 1);
+        };
+
+        let Bbutton = document.getElementById("button-b");
+        let counterB = document.getElementById("counter-b");
+
+        Abutton.onclick = () => {
+          counterB.innerHTML = String(Number(counterA.innerHTML) + 1);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button-a">ButtonA</button>
+    <button id="button-b">ButtonB</button>
+    <h1>Button A - <span id="counter-a">7</span></h1>
+    <h1>Button B - <span id="counter-b">0</span></h1>
+  </body>
+</html>

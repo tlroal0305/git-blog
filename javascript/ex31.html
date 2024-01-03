@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>페이지 이동하기</title>
+    <script>
+      // 페이지 이동하기
+      // 1. 리다이렉트 redirect : 사이트간의 이동, 내부 데이터를 가지고 이동 X
+      //                          EX) a 태그로 이동, meta태그 refresh로 이동
+      // 2. 포워드 forward : 내부 페이지간의 이동, 내부 데이터를 가지고 이동 O
+
+      // JS로 페이지 이동 : location객체, 리다이렉트
+      setTimeout(() => {
+        location.href = "http://www.naver.com";
+        // 간단한 표현
+        location = "http://www.daum.net";
+      }, 3000);
+    </script>
+  </head>
+  <body></body>
+</html>

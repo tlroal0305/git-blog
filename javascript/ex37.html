@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클릭 이벤트</title>
+    <script>
+      // 1. onclick 함수
+      // 2. addEvevtListener 함수
+      window.onload = () => {
+        let h1_1 = document.getElementById("header1");
+        h1_1.onclick = () => {
+          alert("H1 클릭");
+        };
+
+        let h1_2 = document.getElementById("header2");
+        //                 이벤트 이름 처리할 함수
+        h1_2.addEventListener("click", () => {
+          alert("H1 클릭2");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="header1">클릭하세요1</h1>
+    <h1 id="header2">클릭하세요2</h1>
+
+    <!-- inline으로 클릭 이벤트 처리 -->
+    <h1 onclick="alert('클릭');">클릭하세요3</h1>
+
+    <!-- param = 홍길동 -->
+    <h1 onclick="myFunc('홍길동')">클릭하세요4</h1>
+
+    <script>
+      function myFunc(param) {
+        alert("클릭2" + param);
+      }
+    </script>
+  </body>
+</html>

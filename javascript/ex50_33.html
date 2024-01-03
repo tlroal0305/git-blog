@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function one(n) {
+        //n 제곱
+        function two(num) {
+          //제곱할 수
+          /* 빈칸을 입력하세요. */
+          console.log(Math.pow(num, n));
+        }
+        return two;
+      }
+
+      const a = one(2);
+      const b = one(3);
+      const c = one(4);
+
+      console.log(a(10));
+      console.log(b(10));
+      console.log(c(10));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 function</title>
+    <script>
+      // 함수를 사용하는 이유
+      // 1. 중복을 제거하기 위해서 - 코드 재사용성
+      // 2. 함수(코드)에 이름을 붙여서 - 코드 가독성
+      // 3. 기능적으로 분리/결합 - 코드 모듈화
+
+      //함수의 4가지 형식
+      // 1. 매개변수X 반환값X
+      function myFunc1() {
+        console.log("myFunc1 호출");
+        return;
+      }
+      // 2. 매개변수O 반환값X
+      function myFunc2(param) {
+        console.log("myFunc2 호출");
+        console.log("param: " + param);
+        return;
+      }
+      // 3. 매개변수X 반환값O
+      function myFunc3() {
+        return "홍길동";
+      }
+      // 4. 매개변수O 반환값O
+      function myFunc4(param) {
+        return param * 2;
+      }
+
+      // return문 : 함수의 종료(반환값 넘김)
+
+      myFunc1();
+      myFunc2(10);
+      let result = myFunc3();
+      console.log(result);
+      result = myFunc4(10);
+      console.log(result);
+
+      //< 연습 문제 >
+      //1. 매개변수가 2개 있고, 반환값이 있는
+      // add이라는 이름의 함수를 선언하고,
+      // 매개변수는 num1, num2
+      // 반환값은 num1 + num2의 합산 결과값이다.
+      // add 함수를 선언하고 호출(수행)해서 결과값을 출력하시오.
+      // 입력값 : 10, 20
+      // 출력값 : 30
+      function add(num1, num2) {
+        console.log(num1 + num2);
+        return;
+      }
+      add(10, 20);
+
+      //2. 매개변수가 2개 있고, 반환값이 있는
+      // mul이라는 이름의 함수를 선언하고,
+      // 반환값은 매개변수 2개를 곱한 값을 반환한다.
+      // mul 함수를 선언하고 호출(수행)해서 결과값을 출력하시오.
+      // 입력값 : 10, 20
+      // 출력값 : 200
+      function mul(num1, num2) {
+        console.log(num1 * num2);
+        return;
+      }
+      mul(10, 20);
+      //3. 매개변수가 2개 있고, 반환값이 있는 max 함수를 선언하고,
+      // 반환값은 매개변수 2개 중 큰값을 반환한다.
+      // max 함수를 선언하고 호출(수행)해서 결과값을 출력하시오.
+      // 입력값 : 10, 20
+      // 출력값 : 20
+      function max(num1, num2) {
+        if (num1 > num2) {
+          console.log(num1);
+        } else {
+          console.log(num2);
+        }
+        return;
+      }
+      max(10, 20);
+
+      //4.어떤 양의 정수( 0 ~ n ) 를 입력받고,
+      // 2이 배수이거나 3의 배수이면
+      // "2이 배수이거나 3의 배수입니다." 라고 출력하는
+      // 함수 display를 선언하고 호출하시오.
+      // 2이 배수이거나 3의 배수가 아니면,
+      // "2이 배수이거나 3의 배수가 아닙니다."라고 출력하시오.
+      // 출력은 함수안에서!
+      // 리턴값 : 없음
+      // 입력값 : 5
+      // 출력값 : "2이 배수이거나 3의 배수가 아닙니다."
+      // 입력값 : 6
+      // 출력값 : "2이 배수이거나 3의 배수입니다."
+      function display(num) {
+        if (num % 2 == 0 || num % 3 == 0) {
+          console.log("2이 배수이거나 3의 배수입니다.");
+        } else {
+          console.log("2이 배수이거나 3의 배수가 아닙니다.");
+        }
+        return;
+      }
+      display(5);
+    </script>
+  </head>
+  <body></body>
+</html>

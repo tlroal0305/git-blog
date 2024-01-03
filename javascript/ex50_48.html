@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let str = prompt();
+      let result = "";
+
+      // '==' 연산자를 이용하여 서로 다른 유형의 두 변수의 [값] 비교
+      // '==='는 엄격한 비교를 하는 것으로 알려져 있다a ([값 & 자료형] -> true).
+      for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toUpperCase()) {
+          result += str[i].toLowerCase();
+        } else if (str[i] === str[i].toLowerCase()) {
+          result += str[i].toUpperCase();
+        }
+      }
+
+      console.log(result);
+    </script>
+  </head>
+  <body></body>
+</html>

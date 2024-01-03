@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcdonald kiosk2</title>
+    <link
+            rel="icon"
+            href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<div class="kiosk-box">
+    <div class="wrap">
+        <div class="top-box">
+            <div class="textBox">
+                <h4>키오스크 관리자 화면</h4>
+            </div>
+        </div>
+        <div class="middle-box">
+            <h4>상품 목록</h4>
+            <table class="table table-striped">
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>이미지</th>
+                    <th>가격</th>
+                    <th>옵션</th>
+                    <th class="text-center">수정</th>
+                    <th class="text-center">삭제</th>
+                </tr>
+                <!-- 향상된 for문이라고 생각 -->
+                <!-- itemRecommend속성이 item객체에 존재하지 않으면 Thymeleaf 템플릿이 itemRecommend 속성을 찾을 수 없어 오류 발생 -->
+                <!-- DB에서 가져온 객체와 Thymeleaf 템플릿에서 사용하는 객체 간 속성이 일치하지 않으면 오류 ! 꼭 일치시켜야 함 -->
+                <tr th:each="item, status : ${ itemList }">
+                    <input type="hidden" id="itemRecommend" name="itemRecommend" th:value="${item.itemRecommend}" />
+                    <td th:text="${ item.itemNo }"></td>
+                    <td th:text="${ item.itemName }"></td>
+                    <td><img id="itemImageUrl" th:src="${item.itemImageUrl}" width="150" height="100"/></td>
+                    <td th:text="${ item.itemPrice }"></td>
+                    <td th:text="${ item.itemCate }"></td>
+                    <td class="text-center">
+                        <!-- DB속 고유키로 설정한 Key를 이용하여 수정, 삭제 정보를 불러와야함 -->
+                        <a
+                                th:href="|/itemUpdateForm?itemNo=${ item.itemNo }&&itemRecommend=${ item.itemRecommend }|"
+                                class="btn btn-primary"
+                                role="button"
+                        >수정</a
+                        >
+                    </td>
+                    <td class="text-center">
+                        <!-- GET 요청  -->
+                        <!--  -->
+                        <a
+                                th:href="|/itemDelete?itemNo=${ item.itemNo }&&itemRecommend=${ item.itemRecommend }|"
+                                class="btn btn-danger"
+                                role="button"
+                        >삭제</a
+                        >
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

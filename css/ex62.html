@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kakao 구현</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #wrap{
+        width: 578px;
+        margin: 0 auto;
+      }
+
+      #main{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+
+        border: 1px solid rgba(161, 154, 154, 0.315);
+        
+        padding: 20px;
+        
+
+      
+      }
+
+      form{
+        width: 60%;
+        padding: 100px;
+      
+      }
+
+      #header {
+        display: flex;
+        justify-content: center;
+        
+        margin: 50px;
+        
+        
+        
+      }
+
+      input[type="email"] {
+        font-size: 18px;
+      }
+
+      #email{
+        border: none;
+        border-bottom: 2px solid rgba(161, 154, 154, 0.315) ;
+        line-height: 1.5;
+        width: 100%;
+        
+        
+      }
+
+      input[type="password"] {
+        font-size: 18px;
+      }
+
+      #pw{
+        border: none;
+        border-bottom: 2px solid rgba(161, 154, 154, 0.315) ;
+        line-height: 1.5;
+        width: 100%;
+      }
+
+      input[type="submit"] {
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        height: 50px;
+
+        cursor: pointer;
+      }
+
+      #save input[type="checkbox"]{
+        /* 로그인 상태 유지 체크박스 */
+        /* 체크 전 */
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+
+        /* 개발자가 직접 스타일 지정 */
+        appearance: none;
+        cursor: pointer;
+        background-image: url("kaka.png");
+        background-size: 300px 300px;
+        background-position: 0px 0px;
+      }
+
+      #save input[type="checkbox"]:checked{
+        /* 로그인 상태 유지 체크박스 */
+        /* 체크한 후  */
+        background-image: url("kaka.png");
+        background-size: 300px 300px;
+        background-position: -26px 0px;
+      }
+
+      #save {
+        display: flex;
+      }
+
+      #help{
+        background-image: kaka;
+      }
+
+      #login{
+        background-color: #fee500;
+        
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .join{
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      #joinin{
+        flex-grow: 1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div><h1>kakao</h1></div>
+      </div>
+      <div id="main">
+        <form action="www.myserver.com">
+        <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="카카오메일 아이디,이메일,전화번호"
+          /><br /><br>
+          <input
+            type="password"
+            name="password"
+            id="pw"
+            placeholder="비밀번호"
+          /><br /><br>
+
+          <div id="save">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label>간편로그인 정보 저장</label>
+            <div id="hlep"></div>
+          </div><br>
+
+          <input type="submit" id="login" value="로그인"><br><br>
+          <hr /><br>
+          <input type="submit" value="QR코드 로그인"><br><br>
+      
+      <div class="join" >
+        <a href="#" id="joinin"><small><b>회원가입</b></small></a>
+        <a href="#""><small><b>계정 찾기</b></small></a>
+        <label >|</label>
+        <a href="#"><small><b>비밀번호 찾기</b></small></a>
+      </div>
+  </form>
+  </body>
+</html>

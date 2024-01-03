@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 선택자 활용1</title>
+  <style>
+    li {
+      /* 점점점 제거 */
+      list-style: none;
+      float: left;
+      padding: 0 10px;
+
+    }
+
+    li::after {
+      content: "|";
+      float: right;
+      color: gray;
+      margin-top: -2px;
+      margin-right: -10px;
+    }
+
+    li:last-child {
+      content: "";
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>로그인</li>
+    <li>회원가입</li>
+    <li>마이페이지</li>
+    <li>사이트맵</li>
+</body>
+</html>

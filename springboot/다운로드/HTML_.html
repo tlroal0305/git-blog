@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 웹페이지 색상코드 #F2786D #F98770 #F2C4B3 #CFF1FB #776D8C-->
+    <style>
+      *{
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      h2 {
+        color: #F2786D;
+      }
+      hr {
+        background-color: #F2C4B3;
+        height: 3px;
+        border: 0;
+      }
+      li::marker { color: #F2786D; }
+    </style>
+    <script src="OuterJavaScript.js"></script>
+  </head>
+  <body>
+    <div align="center">
+      <h1><font size="30" color="#F2786D">[ HTML 기초 ]</font></h1>
+      <table>
+        <tr>
+          <th><font color="#776D8C">미리캔버스</font></th>
+          <th><font color="#776D8C">플랫아이콘</font></th>
+          <th><font color="#776D8C">컬러코드</font></th>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">
+              <a href="https://www.miricanvas.com/" target="_blank">
+                <img src="hyperlink.png" alt="" width="50" />
+            </div>
+            </a>
+          </td>
+          <td>
+            <div align="center">
+              <a href="https://www.flaticon.com/" target="_blank">
+                <img src="hyperlink.png" alt="" width="50" />
+              </a>
+            </div>
+          </td>
+          <td>
+            <div align="center">
+              <a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">
+                <img src="hyperlink.png" alt="" width="50" />
+              </a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr />
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#p1"><font color="#F2786D">단축키</font></a></li>
+      <li><a href="#p2"><font color="#F2786D">'HTML'이란?</font></a></li>
+      <li><a href="#p2"><font color="#F2786D">기본 태그</font></a></li>
+    </ol>
+    <hr/>
+    <hr />
+    <h2 id="p1">단축키</h2>
+    <hr/>
+    <ul>
+      <li><font color="#F2786D">주석 달기</font> : Ctrl + /</li>
+      <li><font color="#F2786D">코드 이동</font> : Alt + ↑↓(상하 방향키)</li>
+      <li><font color="#F2786D">코드 복사</font> : Alt + Shift + ↑↓(상하 방향키)</li>
+      <li><font color="#F2786D">저장하기</font> : Ctrl + S</li>
+      <li><font color="#F2786D">환경설정</font> : Ctrl + , (쉼표)</li>
+      <li><font color="#F2786D">메뉴 검색하기</font> : Ctrl + Shift + P</li>
+      <li><font color="#F2786D">라이브서버로 html 파일 열기</font> : Alt + L, ALT + O</li>
+    </ul>
+    <hr/>
+    <h2 id="p2">'HTML'이란?</h2>
+    <hr/>
+    <p>HTML파일은 마크업(Markup) 언어로 된 문서로 XML의 하위 집합으로서 XML의 규칙을 따름</p>
+    <ul>
+      <li><font color="#F2786D"><b>head 태그</b></font> : 문서 제목 title과 문서 정보 meta를 담고 있음</li>
+      <li><font color="#F2786D"><b>body 태그</b></font> : 실제 콘텐츠를 담고 있음</li>
+    </ul>
+    <p><font color="CornflowerBlue"><b>*'XML'이란?</b></font> 태그 기반의 정보는 담는 문서 형식</p>
+    <hr/>
+    <h2 id="p3">기본 태그</h2>
+    <hr/>
+    <h3>글자 태그</h3>
+    <p>
+      글자 태그에는 '제목 태그' : H1 ~ H6 과 '본문 태그' : P(본문 문단 생성),
+      BR(줄 바꿈), HR(수평 줄 삽입)이 있습니다.
+    </p>
+    <br>
+    <h3>글자 속성 태그</h3>
+    <ol>
+      <li><font color="#F2786D"><b>'b'</b></font> : bold, 굵은 텍스트 <font color="#F2786D"><b>(예) </b></font><b>예시 텍스트</b></li>
+      <li><font color="#F2786D"><b>'i'</b></font> : italic, 기울어진 텍스트 <font color="#F2786D"><b>(예) </b></font><i>예시 텍스트</i></li>
+      <li><font color="#F2786D"><b>'small'</b></font> : 텍스트가 작은 효과 <font color="#F2786D"><b>(예) </b></font><small>예시 텍스트</small></li>
+      <li><font color="#F2786D"><b>'sub'</b></font> : 텍스트가 아래에 배치됨 <font color="#F2786D"><b>(예) </b></font><sub>예시 텍스트</sub></li>
+      <li><font color="#F2786D"><b>'sup'</b></font> : 텍스트가 위에 배치됨 <font color="#F2786D"><b>(예) </b></font><sup>예시 텍스트</sup></li>
+      <li><font color="#F2786D"><b>'ins'</b></font> : 텍스트에 밑줄 효과 <font color="#F2786D"><b>(예) </b></font><ins>예시 텍스트</ins></li>
+      <li><font color="#F2786D"><b>'del'</b></font> : 삭제 또는 가운데 줄 효과 <font color="#F2786D"><b>(예) </b></font><del>예시 텍스트</del></li>
+    </ol>
+    <ul>
+      <li><font color="#F2786D"><b>더미 문구</b></font> : 의미 없는 문구 삽입 <font><b>'LOREM IPSUM'</b></font></li>
+      </ul>
+      <br />
+      <h3>목록(리스트) 태그</h3>
+      <ol>
+        <li><font color="#F2786D"><b>OL</b></font> : Order list, 순서 있는 목록 <font color="#F2786D"><b>(예) </b></font>1 2 3</li>
+        <li><font color="#F2786D"><b>UL</b></font> : Unorder list, 순서 없는 목록 <font color="#F2786D"><b>(예) </b></font>● ● ●</li>
+        <li><font color="#F2786D"><b>UL</b></font> : List, 항목 1개를 의미</li>
+      </ol>
+      <br />
+      <h3>바로가기 태그</h3>
+      <p>
+        다른 말로는 '앵커 태그', '하이퍼링크 태그'라고 합니다. <b>'a'</b>
+      </p>
+      <ul>
+        <li><font color="#F2786D"><b>페이지 안에서의 이동</b></font> : 바로가기 링크 넣는 위치에 #[페이지 이름] + 페이지 아이디
+        <p></p>
+          <img src="ex.PNG" alt="">
+        </li>
+        </ul>
+  </body>
+</html>

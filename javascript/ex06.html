@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수와 상수</title>
+    <!-- var : 변수, 재선언과 타입 변경 가능 -->
+    <!-- let : 변수 (ES6 추가) -->
+    <!-- const : 상수 -->
+    <script>
+      var num = 10;
+      document.write(num + "<br>");
+      document.write(typeof num + "<br>");
+      //재선언, 타입 변경 가능 -> 너무 유연 => 오류를 잘 찾지 X
+      var num = " hello js";
+      document.write(num + "<br>");
+      document.write(typeof num + "<br>");
+
+      let myNum = 10;
+      document.write(typeof myNum + "<br>");
+      //let은 변수 재선언 방지
+      myNum = "hello js ";
+      document.write(typeof myNum + "<br>");
+
+      const PI = 3.14;
+      //상수에 값을 재할당하면 오류
+      PI = 6.24;
+    </script>
+  </head>
+  <body></body>
+</html>

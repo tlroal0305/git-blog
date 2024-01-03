@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Mcdonald kiosk3</title>
+    <link
+      rel="icon"
+      href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/menu_style.css" />
+  </head>
+  <body>
+    <div class="kiosk-box">
+      <div class="wrap">
+        <div class="ad">
+          <img
+            src="https://www.mcdonalds.co.kr/upload/main/banner/1680589479787.jpg"
+            alt=""
+            id="changingImage"
+          />
+        </div>
+        <div class="welcomeText">
+          <span id="nickname" th:text="|${loginNickname}|">홍길동</span>
+          <span>&nbsp;님 환영합니다.</span>
+        </div>
+        <div class="header">
+          <div class="headerLogoBox">
+            <img src="./img/Mcdonald_Logo.png" alt="" />
+          </div>
+
+          <div class="headerRightBox">
+            <div class="returnButtonBox">
+              <button id="returnButton">이전</button>
+            </div>
+            <div class="headerTextBox">
+              <span class="headerText">추천 메뉴</span>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="nav">
+            <button id="recommendMenu">
+              <img
+                src="https://media.istockphoto.com/id/471456061/ko/%EC%82%AC%EC%A7%84/%ED%95%A8%EB%B6%80%EB%A5%B4%EA%B1%B0.jpg?s=612x612&w=0&k=20&c=AwkwcOA-vb79zwKAwzsozBzr5y63QqiwQpV_i9UcXmc="
+                alt=""
+              />추천 메뉴
+            </button>
+            <button id="burgerSet">
+              <img
+                src="https://newsimg.hankookilbo.com/cms/articlerelease/2021/04/29/62a1cda6-ec70-44a8-811c-fbc6300a18ed.png"
+                alt=""
+              />버거 & 세트
+            </button>
+            <button id="happyMeal">
+              <img
+                src="https://blog.kakaocdn.net/dn/HWIEk/btqF1b2CGuI/qCnvsrboK1DwlXDrJqLCw0/img.jpg"
+                alt=""
+              />해피밀
+            </button>
+            <button id="coffee">
+              <img
+                src="https://img.hankyung.com/photo/202112/AA.28338483.1.jpg"
+                alt=""
+              />커피
+            </button>
+            <button id="dessert">
+              <img
+                src="https://res.heraldm.com/content/image/2020/06/05/20200605000119_0.jpg"
+                alt=""
+              />디저트
+            </button>
+            <button id="drinks">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />음료
+            </button>
+          </div>
+          <div class="section"></div>
+          <div class="sectionMove">
+            <button id="prevButton"><</button>
+            <button id="nextButton">></button>
+          </div>
+        </div>
+        <div class="cartBox">
+          <div class="cartText">
+            <span>주문 내역</span>
+            <div id="cartSummary">
+              <div id="cartTotal">총 가격: 0원</div>
+              <div id="cartQuantity">수량: 0</div>
+            </div>
+          </div>
+          <div id="cartList">
+            <span id="shoppingCartText">장바구니가 비어있습니다.</span>
+          </div>
+          <div class="removeCart">
+            <button onclick="removeAll();">비우기</button>
+          </div>
+          <button onclick="goToCart()" id="orderCheck">>> 주문 상세보기</button>
+          <div class="goToBox">
+            <button onclick="goToBack()" id="goToBack">주문 취소</button>
+            <button onclick="goToPay()" id="goToPay">주문 완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/menu.js"></script>
+  </body>
+</html>

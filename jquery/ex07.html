@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      //n번째 선택 : css 1.nth-child(1), 2.nth-type-of(1)
+      //             jquery
+      //             1. eq()함수 : eq(0) 첫번째 선택
+      //             2. fist()함수 : 첫번째 선택
+      //             3. last()함수 : 마지막 선택
+      //             4. add()함수 : 객체 선택을 추가
+      $(function () {
+        // $('h1') -> html에 있는 모든 h1을 선택
+        $("h1").eq(0).css("color", "red");
+        $("h1").eq(1).css("color", "blue");
+        $("h1").first().css("background-color", "yellow");
+        $("h1").last().css("background-color", "cyan");
+
+        // add()함수로 선택 객체를 추가
+        $("h1").first().add("h2").add("p").css("color", "brown");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>제목 태그1</h1>
+    <h1>제목 태그2</h1>
+    <h1>제목 태그3</h1>
+    <h1>제목 태그4</h1>
+    <h1>제목 태그5</h1>
+    <h2>제목 태그6</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit ullam
+      incidunt consequatur accusantium eligendi! Praesentium, placeat. Suscipit
+      quisquam ullam cupiditate sapiente culpa? Provident alias sequi expedita
+      error fugiat atque? Exercitationem!
+    </p>
+  </body>
+</html>

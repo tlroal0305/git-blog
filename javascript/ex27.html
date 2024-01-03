@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key-Value 객체</title>
+    <script>
+      // JS 객체( KV객체 )
+      // 자바 - 맵(Key-Value)
+
+      // 객체선언
+      // key: 반드시 문자열(쌍따옴표는 안씀)
+      // value : 다양한 타입(number, string, function, object)
+      let keyValue = {
+        apple: 1000,
+        banana: 2000,
+        pear: 3000,
+      };
+      console.log(keyValue["apple"]);
+      console.log(keyValue.apple);
+
+      let person = {
+        name: "홍길동",
+        action: () => {
+          console.log("액션배우!");
+        },
+      };
+
+      console.log(person.name);
+      person.action();
+
+      let toy = {
+        name: "마블 피규어",
+        price: 1000,
+        lang: "한국어",
+        color: "white & red",
+      };
+      //전체 순환
+      //for in문
+      for (let key in toy) {
+        console.log(toy[key]);
+      }
+      //for of문
+      for (const [key, value] of Object.entries(toy)) {
+        console.log(key);
+        console.log(value);
+      }
+
+      // < 연습문제 >
+      let studet = {
+        kor: 70,
+        eng: 80,
+        math: 90,
+        sum: (a, b, c) => {
+          return a + b + c;
+        },
+        avr: (a, b, c) => {
+          return (a + b + c) / 3;
+        },
+      };
+      console.log(studet.kor);
+      console.log(studet.eng);
+      console.log(studet.math);
+      console.log(studet.sum(studet.kor, studet.eng, studet.math));
+      console.log(studet.avr(studet.kor, studet.eng, studet.math));
+    </script>
+  </head>
+  <body></body>
+</html>

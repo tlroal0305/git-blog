@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=], initial-scale=1.0" />
+    <title>식사 메뉴 장소</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+          body {
+            background-color: rgb(255, 198, 12);
+
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        body {
+          width: 600px;
+        }
+
+        #page2_header {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 50px;
+        }
+
+        #header_text {
+          color: black;
+          font-size: 20px;
+          font-weight: bold;
+
+          margin-top: 80px;
+          margin-bottom: 30px;
+        }
+
+        #page2_main {
+          width: 450px;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .place {
+          background-color: whitesmoke;
+          border-radius: 20px;
+
+          text-align: center;
+          width: 170px;
+          height: 300px;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .place_text {
+          margin-top: 20px;
+
+          font-size: 19px;
+          font-weight: bold;
+          color: rgb(189, 23, 23);
+        }
+
+        #page2_footer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          margin: 150px;
+          margin-top: 150px;
+        }
+
+        #page1_back {
+          color: black;
+          font-size: 15px;
+          font-weight: bold;
+
+          margin-top: 20px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="햄버거파비콘" />
+</head>
+<body>
+<!-- 식사 장소 선택 -->
+<div id="page2_body">
+    <div id="page2_header">
+        <img src="햄버거로고 배경제거.png" width="200" height="63" />
+        <div id="header_text">식사하실 장소를 선택해주세요.</div>
+    </div>
+
+    <div id="page2_main">
+        <div class="place">
+            <img src="매장식사.png" class="place.img" width="150" height="92" />
+            <div class="place_text">매장에서 식사</div>
+        </div>
+        <div class="place">
+            <img src="테이크아웃.png" class="place.img" width="150" height="92" />
+            <div class="place_text">테이크 아웃</div>
+        </div>
+    </div>
+
+    <div id="page2_footer">
+        <img
+                id="kioskIcon"
+                src="키오크스 아이콘.png"
+                width="100px"
+                height="100px"
+        />
+        <div id="page1_back">메인으로 돌아가기</div>
+    </div>
+</div>
+</body>
+<script>
+    let place = document.getElementsByClassName("place");
+
+    for (let i = 0; i < place.length; i++) {
+      place[i].addEventListener("click", function () {
+        // 페이지3으로 이동
+        window.location.href = "page3.html";
+      });
+    }
+
+    let page2_footer = document.getElementById("page2_footer");
+
+    page2_footer.addEventListener("click", function () {
+      window.location.href = "page1.html";
+    });
+</script>
+</html>

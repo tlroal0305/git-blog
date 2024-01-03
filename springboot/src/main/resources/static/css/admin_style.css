@@ -1,0 +1,72 @@
+.container {
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.admin_title {
+  height: 100px;
+  border-bottom: 1px solid gray;
+}
+
+/* admin_side */
+.admin_side {
+  border-right: 1px solid gray;
+}
+.admin_side_menu {
+  padding: 20px;
+  font-size: 20px;
+}
+.admin_side_menu button {
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  padding: 10px 0;
+  margin: 5px 0;
+}
+.menu_height {
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
+
+/* admin_main 회원목록 */
+.admin_main {
+}
+.admin_main h3 {
+  padding: 10px 0;
+}
+.admin_main > span {
+  padding: 10px 0px;
+}
+#member_count {
+  font-size: 12px;
+}
+#member_id {
+  display: hidden;
+}
+table td {
+  text-align: center;
+}
+
+/* admin_main 회원정보수정 */
+
+.admin_member_update_menubox {
+  padding: 20px 0;
+}
+.admin_member_update_menubox button {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* 상품 목록 이미지 */
+
+.admin_item_img {
+  width: 50px;
+  object-fit: contain;
+}

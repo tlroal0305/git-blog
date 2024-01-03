@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원목록 조회</title>
+</head>
+<body>
+    <h2>회원목록 조회</h2>
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>id</th>
+            <th>아이디</th>
+            <th>비번</th>
+            <th>이름</th>
+            <th>권한</th>
+            <th>가입일</th>
+        </tr>
+        <tr th:each="member, status:${ list }">
+            <td><span th:text="${status.count}"></span></td>
+            <td><span th:text="${member.id}"></span></td>
+            <td><span th:text="${member.userId}"></span></td>
+            <td><span th:text="${member.userPw}"></span></td>
+            <td><span th:text="${member.userName}"></span></td>
+            <td><span th:text="${member.userRole}"></span></td>
+            <td><span th:text="${member.joindate}"></span></td>
+        </tr>
+    </table>
+</body>
+</html>

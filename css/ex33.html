@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img태그 - object-fit속성</title>
+    <style>
+      img {
+        border: 2px solid red;
+        width: 100px;
+        height: 100px;
+      }
+      #img1 {
+        /* none: 원본 이미지 크기로 보임 */
+        /*       이미지는 center */
+        object-fit: none;
+      }
+      #img2 {
+        /* W(가로), H(세로) 중 더 긴쪽에 맞춤 */
+        /* 이미지 사이에 공백이 생김 */
+        /* 세로가 길면 세로 기준, 가로가 길면 가로 기준 */
+        object-fit: contain;
+      }
+      #img3 {
+        /* W(가로), H(세로) 중 더 짧은 쪽에 맞춤 */
+        /* 이미지가 잘림 */
+        /* 세로가 길면 세로 기준, 가로가 길면 가로 기준 */
+        object-fit: cover;
+      }
+      #img4 {
+        /* 기본값 */
+        /* 가로, 세로 비율을 img태그 크기에 맞춤 */
+        object-fit: fill;
+      }
+      #img5 {
+        /* none과 contain중에 더 적절한 방향으로 사이즈를 조절 */
+        object-fit: scale-down;
+      }
+    </style>
+  </head>
+  <body>
+    <div><img id="img1" src="cafe.jpg" alt="카페이미지1" /></div>
+    <div><img id="img2" src="cafe.jpg" alt="카페이미지2" /></div>
+    <div><img id="img3" src="cafe.jpg" alt="카페이미지3" /></div>
+    <div><img id="img4" src="cafe.jpg" alt="카페이미지4" /></div>
+    <div><img id="img5" src="cafe.jpg" alt="카페이미지5" /></div>
+  </body>
+</html>

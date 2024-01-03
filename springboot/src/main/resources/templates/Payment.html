@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Mcdonald kiosk</title>
+    <link
+      rel="icon"
+      href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/pay_style.css" />
+  </head>
+  <body>
+    <div class="kiosk-box">
+      <div class="wrap">
+        <div id="orderCheck">주문을 확인하세요.</div>
+        <div class="cartIn">
+          <div class="cartTotalBox">
+            <div id="cartQuantity"></div>
+            <div id="cartTotal"></div>
+          </div>
+          <div class="payment">
+            <div class="paytxt">
+              <span id="paytxt1">카드를 화살표 방향으로</span
+              ><span id="paytxt2"> 투입구에 넣어주세요.</span>
+              <span id="paytxt3">결제 오류시,</span>
+              <span id="paytxt4">카드를 긁어주세요.</span>
+            </div>
+            <div id="payImg">
+              <img
+                src="https://cdn.dribbble.com/users/1280935/screenshots/6974685/payment-terminal.gif"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/pay.js"></script>
+  </body>
+</html>

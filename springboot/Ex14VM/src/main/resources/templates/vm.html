@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- ex52 -->
+    <title>연습문제20 - 자판기 프로그램</title>
+
+    <style>
+      #wrap {
+        border: 1px solid gray;
+        width: 300px;
+        height: 400px;
+        margin: 30px auto;
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+        text-align: center;
+      }
+      .btn {
+        width: 250px;
+        height: 30px;
+        margin-bottom: 10px;
+      }
+      #can {
+        background-color: green;
+        color: rgb(240, 228, 228);
+      }
+      #water {
+        background-color: rgb(9, 216, 19);
+        color: rgb(240, 228, 228);
+      }
+      #result {
+        background-color: rgb(108, 158, 235);
+        color: rgb(240, 228, 228);
+      }
+      .won {
+        width: 120px;
+        height: 30px;
+        margin-bottom: 10px;
+        background-color: rgb(214, 48, 70);
+        color: rgb(240, 228, 228);
+      }
+      button {
+        border: 1px solid rgba(65, 65, 65, 0.5);
+      }
+      #remain {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div>
+        <p>JavaScript</p>
+        <p>자판기 프로그램을 작성해보자</p>
+      </div>
+      <div>
+        <p>1. 동전 투입 시 잔액 추가됨.</p>
+        <p>2. 잔액 부족 시 잔액 부족 팝업</p>
+        <p>3. 뽑기 후에 잔액 차감.</p>
+      </div>
+      <form action="/calc" method="post">
+        <div id="insert">
+          <button class="won" id="coin1000" name="coin1000" value="1000">
+            1000원 투입
+          </button>
+          <button class="won" id="coin500" name="coin500" value="500">
+            500원 투입
+          </button>
+        </div>
+        <button class="btn" id="can" name="can" value="2000">
+          캔음료 2000원 뽑기
+        </button>
+        <button class="btn" id="water" name="water" value="700">
+          생수 700원 뽑기
+        </button>
+        <label id="remain">잔액</label>
+        <input type="hidden" id="calType" name="calType" value="" />
+        <button class="btn" id="result">0</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    coin1000.onclick = function () {
+      calType.value = " add1000 ";
+
+      fetch("http://localhost:8080/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          coin1000: document.getElementById("coin1000"),
+          calType: calType.value,
+        }),
+      })
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        }) //HTTP 응답
+        .then((json) => {
+          //{ status: "ok", result: 5 }
+          console.log(json);
+          result.value = json.result;
+        }) //실제 데이타
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    coin500.onclick = function () {
+      calType.value = " add500 ";
+
+      fetch("http://localhost:8080/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          coin500: document.getElementById("coin500"),
+          calType: calType.value,
+        }),
+      })
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        }) //HTTP 응답
+        .then((json) => {
+          //{ status: "ok", result: 5 }
+          console.log(json);
+          result.value = json.result;
+        }) //실제 데이타
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    can.onclick = function () {
+      calType.value = " subcan ";
+
+      fetch("http://localhost:8080/calc", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          can: document.getElementById("can"),
+          calType: calType.value,
+        }),
+      })
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        }) //HTTP 응답
+        .then((json) => {
+          //{ status: "ok", result: 5 }
+          console.log(json);
+          result.value = json.result;
+        }) //실제 데이타
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    water.onclick = function () {
+      calType.value = " subwater ";
+
+      fetch("http://localhost:8080/calc", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          water: document.getElementById("water"),
+          calType: calType.value,
+        }),
+      })
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        }) //HTTP 응답
+        .then((json) => {
+          //{ status: "ok", result: 5 }
+          console.log(json);
+          result.value = json.result;
+        }) //실제 데이타
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+  </script>
+</html>

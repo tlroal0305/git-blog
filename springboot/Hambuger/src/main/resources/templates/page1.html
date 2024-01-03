@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>첫화면</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          background-color: rgb(255, 198, 12);
+
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      body {
+        width: 600px;
+      }
+
+      #page1_header {
+        margin: 0 auto;
+      }
+
+      #buger_img {
+        position: relative;
+        z-index: 1;
+      }
+
+      #buger {
+        position: absolute;
+        z-index: 2;
+
+        color: white;
+        font-size: 20px;
+
+        padding: 100px;
+      }
+
+      .line:first-child {
+        border: 5px solid goldenrod;
+        width: 60px;
+
+        position: absolute;
+        z-index: 2;
+
+        margin: 80px;
+        margin-left: 100px;
+      }
+
+      #page1_main {
+        background-color: rgba(58, 71, 92, 0.63);
+        color: whitesmoke;
+        font-size: 13px;
+        width: 450px;
+        height: 90px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #page1_footer {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+      }
+
+      button {
+        /* 버튼 스타일 초기화 */
+        all: unset;
+      }
+
+      #orderBtn {
+        border: 2px solid whitesmoke;
+        border-radius: 50px;
+
+        color: whitesmoke;
+        font-size: 20px;
+        text-align: center;
+
+        width: 300px;
+        height: 70px;
+
+        margin-bottom: 20px;
+      }
+    </style>
+    <link rel="icon" type="image/x-icon" href="햄버거파비콘" />
+  </head>
+  <body>
+    <!-- 첫화면 -->
+
+    <div id="page1_body">
+      <div id="page1_header">
+        <div class="line"></div>
+        <div id="buger">
+          <div id="bugerKo">햄버거</div>
+          <div id="bugerEn">Hambuger</div>
+        </div>
+        <img id="buger_img" src="첫화면햄버거.jpg" width="450px" height="650" />
+      </div>
+
+      <div id="page1_main">
+        <div id="page_text">
+          ● 쿠폰 및 모바일 상품권 사용은 카운터에 문의해 주세요.<br />
+          ● 현금 결제는 카운터에서만 가능 Please pay at Front Counter for Cash
+        </div>
+      </div>
+
+      <div id="page1_footer">
+        <button id="orderBtn">주문하시려면 터치하세요</button>
+        <img src="햄버거로고 배경제거.png" width="200" height="63" />
+      </div>
+    </div>
+  </body>
+  <script>
+    let orderBtn = document.getElementById("orderBtn");
+
+    orderBtn.addEventListener("click", function () {
+      // 데이터를 localstorage에 저장
+      window.localStorage.setItem("orderBtn", "true");
+
+      // 페이지2로 이동
+      window.location.href = "page2.html";
+    });
+  </script>
+</html>

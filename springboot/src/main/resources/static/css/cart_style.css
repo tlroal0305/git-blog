@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "Pretendard-Regular";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.kiosk-box {
+  background-color: white;
+  border: 2px solid #d3d3d3;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 550px;
+  height: 900px;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(44, 80, 39);
+  border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+#orderCheck {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+/* 카트 전체 */
+.cartIn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: white; */
+}
+
+/* 장바구니 목록 */
+#cartList {
+  width: 90%;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+}
+
+#cartList > div {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+#cartList > div span:first-child {
+  margin-right: 10px;
+}
+
+/* 총 가격 및 수량 박스 */
+.cartTotalBox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: flex-end;
+  background-color: rgb(255, 255, 255);
+  /* border-radius: 0px 0px 10px 10px; */
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+/* 총 가격 스타일 */
+#cartTotal,
+#cartQuantity {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+#cartTotal {
+  color: rgb(236, 13, 13);
+}
+
+/* 수량 조정 버튼 */
+.totalButton {
+  border-radius: 5px;
+  border: 0;
+  margin: 0px 5px 0px 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 20px;
+}
+
+.totalButton:hover {
+  background-color: rgb(84, 114, 97);
+}
+
+#buttonBox {
+  width: 90%;
+  height: auto;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+#additionalOrderButton,
+#payButton {
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(202, 9, 9);
+  color: white;
+  font-size: 18px;
+}
+
+#payButton {
+  margin-left: 10px;
+  background-color: rgb(44, 80, 39);
+}

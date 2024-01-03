@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let num = prompt();
+
+      // .toLocaleString() :
+      // 사람이 이해하기 쉬운 문자열 표현으로 변환
+      // .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      // 세 자리 숫자마다 ,를 찍어주는 정규 표현식
+      console.log(num.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    </script>
+  </head>
+  <body></body>
+</html>

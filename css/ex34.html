@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box-sizing 속성</title>
+    <!-- width, height의 단위를 정의 -->
+    <!-- content-box: 기본값, 콘텐츠의 너비/높이로 크기 지정 -->
+    <!--              단점 -> 배치할 때 패딩 + 테두리 두께가 바뀌면, 다시 계산  -->
+    <!-- border-box: 콘텐츠 + 패딩 + 테두리 두께로 크기 지정-->
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border: 10px solid black;
+        margin: 10px;
+        padding: 10px;
+      }
+      div:first-child {
+        box-sizing: content-box;
+        background-color: aquamarine;
+      }
+      div:nth-child(2) {
+        box-sizing: border-box;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    content-box : width/height = 콘텐츠 크기
+    <div>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem aliquam
+      asperiores quaerat ex ipsa blanditiis dolore! Molestias cumque a at nemo,
+      debitis perspiciatis accusamus. Ipsum amet ut iste voluptatum aliquam!
+    </div>
+    border-box: width/height = 콘텐츠 + 패딩 + 테두리 굵기
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, magni
+      sapiente. Officiis tempora ducimus pariatur ut repudiandae maiores sequi
+      inventore, blanditiis itaque quo ipsam, nostrum ullam excepturi sed fugiat
+      ratione.
+    </div>
+  </body>
+</html>

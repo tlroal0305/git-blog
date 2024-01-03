@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배치하기 - display속성</title>
+    <!-- none : 안보이게 함 -->
+    <!-- block : 한줄 차지, 줄바꿈 O -->
+    <!-- inline : 한칸 차이, 줄바꿈 X -->
+    <!-- inline-block : 한칸 차지, W와H 지정 가능 -->
+
+    <!-- 기본 display속성 -->
+    <!-- block: H1~H6, div, p , hr, ol, ul, li,table, form -->
+    <!-- inline: span, a, img, text,input,laber -->
+
+    <style>
+      /* 한칸 공백은 전부를 뜻 함 */
+      body {
+        margin: 0;
+      }
+      * {
+        border: 1px solid sandybrown;
+      }
+      #div {
+        /* display: none은 보이지 않게 하고 자기 영역을 상실 */
+        display: none;
+        /* visibility: hidder은 보이지 않게 자기 영역을 유지 */
+        /* visibility: hidden; */
+      }
+      #span1 {
+        visibility: hidden;
+      }
+      #spna2 {
+        /* inline속성은 자체 너비/높이 지정 불가 */
+        width: 100px;
+        height: 100px;
+        /* inline-block 속성은 자체 너비/높이 지정 가능 */
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div">div는 block속성</div>
+    <span id="span1">span1은 inline속성</span>
+    <span id="span2">span2은 inline속성</span>
+    <span>span3은 inline속성</span>
+  </body>
+</html>

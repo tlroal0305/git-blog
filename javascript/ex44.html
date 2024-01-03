@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>테이블 입력값 조작하기</title>
+    <script>
+      //연습문제
+      //값 지우기 버튼을 클릭하면, 왼쪽의 입력창의 값을 지우시오.
+      window.onload = () => {
+        makeTable();
+
+        let btnArray = document.getElementsByTagName("button");
+        let inputArray = document.getElementsByTagName("input");
+
+        for (let i = 0; i < btnArray.length; i++) {
+          //화살표 함수에는 this가 없으므로 function으로
+          //이벤트를 등록합니다.
+          btnArray[i].onclick = function () {
+            //콘솔에 몇번 버튼이 클릭되었는지 출력하고,
+            //왼쪽의 입력창의 값을 지우시오.
+            console.log(i + 1 + "번 버튼 클릭");
+            inputArray[i].value = "";
+          };
+        }
+      };
+
+      function makeTable() {
+        //document.writeln함수를 이용하여
+        //동적으로 테이블을 작성하시오.
+        document.write("<table border = '1'>");
+        document.write("<tr>");
+        document.write("<th>목록1</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록2</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록3</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록4</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록5</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록6</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록7</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록8</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록9</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<th>목록10</th>");
+        document.write("<th><input type=text></th>");
+        document.write("<th><button>값 지우기</th>");
+        document.write("</tr>");
+        document.write("</table>");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

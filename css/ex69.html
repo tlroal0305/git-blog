@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어쿼리 Media Query</title>
+    <!-- 화면 너비에 따라 CSS를 따로 적용 -->
+    <!-- 반응형 웹 ? -->
+    <!--  : 화면 너비에 따라서 반응하는 동적인 웹을 의미 -->
+    <!--    화면 높이는 세로 스크롤이 있어 별도의 처리가 의미X -->
+    <!--    화면 너비에 따라서 PC 웹, 테블릿 웹, 모바일 웹으로 구분 -->
+    <!-- 반응형 웹을 만드는 방법 -->
+    <!-- 1. PC 웹과 모바일 웹을 별도로 제작 예) 네이버(PC 웹/모바일 웹) -->
+    <!-- 2. 반응형으로 화면 너비에 따라서 배치가 바뀌도록 제작 -->
+    <!--    : PC 웹 - 4열, 모바일 - 2열 -->
+
+    <!-- PC화면 너비 : 가로 960px 이상 -->
+    <!-- 테블릿화면 너비 : 768px 이상, 아이패드의 수직상태 가로 너비 -->
+    <!-- 모바일화면 너비 : 767px 이하 -->
+
+    <style>
+      /* 모바일 */
+      /* 0px ~ 767px */
+      @media screen and (max-width: 767px) {
+        body {
+          background-color: cyan;
+          color: white;
+          font-weight: bold;
+        }
+      }
+
+      /* 테블릿 */
+      /* 768px ~ 7959px */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+          color: white;
+          font-weight: bold;
+        }
+      }
+
+      /* PC */
+      /* 960px ~  */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: plum;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제목</h1>
+    <p>
+      문단태그 입니다. 문단태그 입니다. 문단태그 입니다. 문단태그 입니다.
+      문단태그 입니다.
+    </p>
+    <p>
+      문단태그 입니다. 문단태그 입니다. 문단태그 입니다. 문단태그 입니다.
+      문단태그 입니다.
+    </p>
+  </body>
+</html>

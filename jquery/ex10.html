@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화진흥위원회 Open ARI 활용</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do -->
+    <!-- 주간 영화 랭킹 정보 조회 -->
+    <!-- API Key 발급 : b6e0d010221dc003668b4e216edbbd1f -->
+    <script>
+      //https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=b6e0d010221dc003668b4e216edbbd1f&targetDt=20230815
+
+      //< 연습 문제 >
+      //1. fetch 함수를 이용하여, json 정보 출력
+      fetch(
+        "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=b6e0d010221dc003668b4e216edbbd1f&targetDt=20230815"
+      )
+        //.then : 비동기 작업이 완료되었을 때 실행할 함수를 등록
+        .then((response) => {
+          //response -> HTTP 응답 객체
+          return response.json();
+        })
+        .then((json) => {
+          let showRange = json.boxOfficeResult.showRange;
+          console.log("기간: ", showRange);
+
+          for (
+            let i = 0;
+            i < json.boxOfficeResult.weeklyBoxOfficeList.length;
+            i++
+          ) {
+            let rank = json.boxOfficeResult.weeklyBoxOfficeList[i].rank;
+            console.log(rank);
+            let movieName = json.boxOfficeResult.weeklyBoxOfficeList[i].movieNm;
+            console.log(movieName);
+            let audiCnt = json.boxOfficeResult.weeklyBoxOfficeList[i].audiCnt;
+            console.log(audiCnt);
+          }
+
+          // 좀 더 간단히 코딩
+          //  -> 향상된 for문 이용
+          for (let movie of json.boxOfficeResult.weeklyBoxOfficeList) {
+            console.log(movie.rank);
+            console.log(movie.movieNm);
+            console.log(movie.audiCnt);
+          }
+        });
+
+      //2. ajax 함수를 이용하여, json 정보 출력
+      $(function () {
+        $.ajax({
+          type: "get",
+          dataType: "json", //내가 보내는
+          url: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=b6e0d010221dc003668b4e216edbbd1f&targetDt=20230815",
+          mimeType: "application/json", //내가 전송받는
+          success: function (json) {
+            console.log("기간 :" + json.boxOfficeResult.showRange);
+
+            // $.each 자체가 순환해주는 함수이기 때문에 for문 사용X
+            $.each(
+              //json.boxOfficeResult.weeklyBoxOfficeList 배열을 반복하며 영화의 정보를 순환
+              json.boxOfficeResult.weeklyBoxOfficeList,
+              //index : 각 영화 배열의 인덱스 ex) rank, moviNm 등
+              //item : 영화 정보 ex) 1, 오펜하이머 등
+              function (index, item) {
+                console.log(item.rank);
+                console.log(item.movieNm);
+                console.log(item.audiCnt);
+              }
+            );
+          },
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

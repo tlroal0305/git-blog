@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스</title>
+    <script>
+      //class는 ES6부터 지원하기 시작
+      //그전에는 prototype을 통해서 상속 지원,
+      // 문법이 복잡해서 잘 사용X
+
+      //클래스 사용하는 이유 :
+      //1. 함수와 변수를 클래싱(모듈화)
+      //2. 상속, 생성자 함수, 가상 함수(오버라이딩)
+
+      //클래스 선언
+      class Person {
+        name = "홍길동";
+        walk() {
+          console.log(this.name + "는 걷는다.");
+        }
+      }
+
+      //클래스 객체 생성
+      let person = new Person();
+      console.log(typeof person);
+      console.log(person.name);
+      person.walk();
+
+      //생성자 함수
+      class Person2 {
+        constructor(name, age) {
+          console.log("생성자 함수 호출");
+          this.name = name;
+          this.age = age;
+        }
+      }
+
+      let person2 = new Person2("사임당", 30);
+      console.log(person2.name);
+      console.log(person2.age);
+
+      //get, set함수 (자동 호출)
+      class Person3 {
+        constructor(inputName, Age) {
+          this.name = inputName;
+          this.age = Age;
+        }
+
+        get name() {
+          console.log("name값을 읽으면 자동호출됨");
+          return this._name + "님 어서오세요~";
+        }
+
+        set name(newValue) {
+          if (newValue) {
+            //null이 아니고 empty가 아니면
+            console.log("name에 값을 대입하면 자동호출");
+            if (String(newValue).length > 5) {
+              console.log("이름이 다섯자리이상 입니다");
+            } else {
+              this._name = newValue;
+            }
+          }
+        }
+      }
+
+      let person3 = new Person3("이몽룡", 30);
+      // get 값을 읽으면 자동 호출
+      console.log(person3, name);
+      // set 값을 대입하면 자동호출
+      person3.name = "이몽입니당당당";
+
+      //상속
+      class Man {
+        constructor() {
+          console.log("Man 생성자함수 호출");
+        }
+
+        run() {
+          console.log("남자가 달린다");
+        }
+      }
+
+      class Superman extends Man {
+        constructor() {
+          super();
+          console.log("Superman 생성자 함수 호출");
+        }
+        // 오버라이딩 : 부모 클래스의 함수가 무시
+        run() {
+          console.log("슈퍼맨이 달린다");
+        }
+      }
+      let Superman = new Superman();
+      superman.run();
+
+      //인터페이스(가상함수)
+      // : type script 플러그인 설치 후 동작
+      //   타입스크립트 : 바닐라 JS로 변환해주는 프리컴파일러
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS 연습문제</title>
+    <!-- 1. Text-1의 바탕색을 red로  -->
+    <!-- 2. Text-2의 글자색을 blue로  -->
+    <!-- 3. p태그의 짝수번째를 글자색을 green으로 -->
+    <!-- 4. nth-child를 이용하여, 아이템1의 색상을 brown으로 -->
+    <style>
+      div > div:first-of-type {
+        background-color: red;
+      }
+      div p:first-of-type {
+        color: blue;
+      }
+      div p:nth-of-type(2),
+      div p:nth-of-type(4),
+      div p:nth-of-type(6) {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>Text-1</div>
+      <p>Text-2</p>
+      <p>Text-3</p>
+      <p>Text-4</p>
+      <p>Text-5</p>
+      <p>Text-6</p>
+      <p>Text-7</p>
+    </div>
+  </body>
+</html>

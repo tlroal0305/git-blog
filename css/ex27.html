@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inline속성으로 바꾸기 - float속성</title>
+    <!-- float : inline속성 + 좌우정렬 -->
+    <!--         HTML v1부터 있던 속성(주로 배치용) -->
+    <!--         실제 배치는 flex속성, table태그를 주로 이용 -->
+    <!--         어렵고 기능이 복잡  -->
+    <style>
+      body * {
+        border: 1px solid red;
+      }
+      div {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        border: 2px solid black;
+        overflow: hidden;
+        /* float를 사용할 때 주의점! */
+        /* 1. overflow: hidden;을 설정해야 함*/
+        /*    overflow될 때, 자동 줄바꿈이 됨 */
+        /* 2. 부모width가 넘치지 않도록 해줌 */
+        /* 3. clear속성으로 float속성 제거 */
+      }
+      /* nth-chlid()의 n변수 0~n까지 */
+      div:nth-child(2n-1) {
+        background-color: aqua;
+      }
+      #box1 {
+        float: left;
+      }
+      #box2 {
+        float: left;
+      }
+      #box3 {
+        /* float left, right속성 모두를 지움 */
+        clear: both;
+      }
+      #box4 {
+        float: right;
+      }
+      #box5 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">
+      박스 1박스 1박스 1박스 1박스 1박스 1박스 1박스 1박스 1박스 1박스 1박스
+      1박스 1박스 1
+    </div>
+    <div id="box2">박스 2</div>
+    <div id="box3">박스 3</div>
+    <div id="box4">박스 4</div>
+    <div id="box5">박스 5</div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex46.html -->
+    <title>교차축방향정렬 : align-items</title>
+    <!-- align-items : 한줄일 때 -->
+    <!-- align-content : 여러줄일 때 -->
+    <style>
+      .container {
+        display: flex;
+        /* 주축방향 줄바꿈 한줄표현 */
+        flex-flow: row wrap;
+
+        width: 500px;
+        height: 250px;
+        background-color: #eee;
+        border: 1px solid #222;
+        margin-bottom: 10px;
+      }
+      .box {
+        padding: 5px 45px;
+        margin: 5px;
+        /* width: 80px; */
+        background-color: green;
+      }
+      p {
+        color: white;
+        text-align: center;
+      }
+      .opt1 {
+        /* 교차축방향 정렬 : 시작점에 맞춤 */
+        /* 기본 */
+        align-items: flex-start;
+      }
+      .opt2 {
+        /* 끝점에 맞춤 */
+        align-items: flex-end;
+      }
+      .opt3 {
+        /* 가운데 */
+        align-items: flex-center;
+      }
+      .opt4 {
+        /* 여백없이 늘림 - 기본값 */
+        align-items: stretch;
+      }
+
+      .opt5 {
+        /* 글자 밑선에 맞춤 - baseline */
+        align-items: baseline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container opt1">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt2">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt3">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt4">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt5">
+      <div class="box"><h1>1</h1></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><h3>3</h3></div>
+      <div class="box"><p>4</p></div>
+    </div>
+  </body>
+</html>

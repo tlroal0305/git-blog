@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 개요</title>
+    <!-- JavaScript : 공식명칭은 ECMA Script -->
+    <!-- 만든 사람 : 넷스케이프 브랜든 아이크라는 사람이 만듦
+           썬마이크로 시스템즈와 협력해서 만든 언어 -->
+    <!-- Java와 JavaScript와는 전혀 다른 언어  -->
+    <!-- ES6(ECMA Script 6)에서 언어적으로 완성됨. -->
+    <!-- 특징 : 웹브라우저에서 지원하는 유일한 언어 : 과거 Basic언어 -->
+    <!--        구글에서 JS V8 엔진을 향상시키고, 오픈 소스로 배포 -->
+
+    <!-- JS 구동시키는 2가지 방법 -->
+    <!-- 1. 프론트엔드 (사용자 PC) : 웹브라우저 JS 해석, 템플릿 엔진(리액트, Vue, 앵귤러) -->
+    <!-- 2. 백엔드 (서버 PC) : Node js 웹서버 프로그램 -->
+
+    <!-- JS 선언하는 3가지 방법 -->
+    <!-- 1. script테그 안에서 - head, body태그 -->
+    <!-- 2. html태그 속성으로 - onclick, href -->
+    <!-- 3. 별도의 js파일을 import해서 -->
+  </head>
+  <body>
+    <h3>html 콘텐츠가 다 로딩이 되어야 JS로 제어 가능</h3>
+    <h3>
+      body부분의 html요소들을 DON(Document Object Modle)이라는 데이터 구조에
+      적재
+    </h3>
+
+    <a href="javascript:alert('클릭하셨어요?')">클릭하세요</a>
+    <button onclick="alert('버튼 클릭')">클릭하세요</button>
+    <button onclick="myFunc()">myFunc호출</button>
+
+    <script>
+      //body태그 마지막 -JS선언하는 부분
+    </script>
+
+    <script src="myjs.js"></script>
+  </body>
+</html>

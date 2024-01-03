@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>시멘틱 태그</title>
+    <!-- Semantic 의미론적 -->
+    <!-- 웹 페이지의 공통적인 공간 구성 요소를 태그 형식의 분류한 것 -->
+    <!-- 공통적인 구성 요소 : 헤더(Top), 메인(섹션), 사이드, 푸터 -->
+    <!-- 사용하는 이유 : 유지 보수가 쉽고, 검색 엔진에도 잘 노출 -->
+    <!-- header태그 : 상단 공간(헤더)를 의미 -->
+    <!-- nav태그 : 네비게이션(메뉴) -->
+    <!-- aside태그 : 사이드(왼쪽, 오른쪽) 공간 -->
+    <!-- section태그 : 주된 내용(콘텐츠) 공간 -->
+    <!-- article태그 : 섹션안에서 글자를 주로 담는 공간 -->
+    <!-- footer태그 : 바닥 공간-->
+    <!-- main태그 : section + adise를 담는 공간-->
+
+    <!-- ----------------- -->
+    <!-- |   Header(Top)   | -->
+    <!-- ----------------- -->
+    <!-- |        Nav      | -->
+    <!-- ----------------- -->
+    <!-- |      |          |      -->
+    <!-- |Aside | Section  | Main -->
+    <!-- |      |          |      -->
+    <!-- ----------------- -->
+    <!-- |      Footer     | -->
+    <!-- ----------------- -->
+
+    <!-- 시멘틱 태그는 모두 block속성, div랑 동일  -->
+    
+    </body>
+    <style>
+      body {
+        /* 기본 여백을 제거해줌 */
+        margin: 0;
+      }
+
+      * {
+        border: 1px solid red;
+      }
+      section{
+        float: right;
+        width: 80%;
+      }
+      aside{
+        float: left;
+        width: 15%;
+      }
+      footer{
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <header>헤어영역 타이틀</header>
+    <nav>
+      <ul>
+        <li><a href="">메뉴1</a></li>
+        <li><a href="">메뉴1</a></li>
+        <li><a href="">메뉴1</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <article>
+          <h3>내용1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            perspiciatis inventore, possimus, error sapiente fuga dolorum ex
+            excepturi aliquid unde nesciunt molestiae facilis vero culpa maiores
+            rem id? Voluptatum, ullam!
+          </p>
+          <h3>내용2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            perspiciatis inventore, possimus, error sapiente fuga dolorum ex
+            excepturi aliquid unde nesciunt molestiae facilis vero culpa maiores
+            rem id? Voluptatum, ullam!
+          </p>
+          <h3>내용3</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            perspiciatis inventore, possimus, error sapiente fuga dolorum ex
+            excepturi aliquid unde nesciunt molestiae facilis vero culpa maiores
+            rem id? Voluptatum, ullam!
+          </p>
+        </article>
+      </section>
+      <aside>
+        <ul>
+          <li><a href="">사이드 메뉴1</a></li>
+          <li><a href="">사이드 메뉴1</a></li>
+          <li><a href="">사이드 메뉴1</a></li>
+        </ul>
+      </aside>
+    </main>
+    <footer>
+      <p>회사소개 및 주소</p>
+    </footer>
+  </body>
+</html>

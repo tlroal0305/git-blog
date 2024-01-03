@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let date = new Date();
+      //getTime()은 1970년 1월 1일 0시 0분 0초 이후로부터 지금까지 흐른 시간
+      let year = date.getTime();
+      year = Math.floor(year / (3600 * 24 * 365 * 1000)) + 1970;
+
+      console.log(year);
+    </script>
+  </head>
+  <body></body>
+</html>

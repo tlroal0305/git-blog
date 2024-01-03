@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let names = prompt().split(" ");
+      let scores = prompt().split(" ");
+
+      var studentObject = {};
+
+      for (var i = 0; i < names.length; i++) {
+        var name = names[i];
+        var score = scores[i];
+        //            Key     Value
+        studentObject[name] = score;
+      }
+
+      // 결과 객체 출력
+      console.log(studentObject);
+    </script>
+  </head>
+  <body></body>
+</html>

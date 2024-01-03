@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex43.html -->
+    <title>flexbox - 줄바꿈 flex-wrap</title>
+    <style>
+      .container {
+        /* flexbox로 사용 */
+        display: flex;
+        /* 주축방향 */
+        flex-direction: row;
+
+        width: 50%;
+        min-width: 300px;
+        /* max-width : 최대 너비 */
+
+        background-color: #eee;
+        border: 1px solid #222;
+        margin-bottom: 10px;
+        /* 컨텐츠가 컨테이너를 넘어서면 자른다. */
+        /* overflow: hidden; */
+      }
+      .box {
+        width: 80px;
+        background: green;
+        margin: 5px;
+        padding: 5px 45px;
+      }
+      p {
+        color: white;
+        text-align: center;
+      }
+      .opt1 {
+        /* 줄바꿈속성 : 하지않는다. 기본값 */
+        flex-wrap: nowrap;
+      }
+      .opt2 {
+        /* 줄바꿈한다. */
+        flex-wrap: wrap;
+      }
+      .opt3 {
+        /* 줄바꿈을 반대로(위로) */
+        flex-wrap: wrap-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container opt1">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+      <div class="box"><p>5</p></div>
+      <div class="box"><p>6</p></div>
+    </div>
+    <div class="container opt2">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+      <div class="box"><p>5</p></div>
+      <div class="box"><p>6</p></div>
+    </div>
+    <div class="container opt3">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+      <div class="box"><p>5</p></div>
+      <div class="box"><p>6</p></div>
+    </div>
+  </body>
+</html>

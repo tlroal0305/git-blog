@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문</title>
+    <script>
+      //조건문 if문 switch문
+
+      //형식
+      //if ( 조건식 ) {
+      //     참 일때 수행하는 수행문;
+      //}
+
+      //if문의 4가지 형식
+      //1. 단순 if문
+      if (true) {
+        //조건식엔 비교, 논리연산자가 들어감
+        console.log("true입니다");
+      }
+
+      //2. if else문
+      if (true) {
+        console.log("true입니다");
+      } else {
+        console.log("false입니다");
+      }
+
+      //3. if else if문
+      if (false) {
+        console.log("조건1이 true입니다");
+      } else if (true) {
+        console.log("조건1이 false이고 조건2가 true입니다");
+      } else {
+        console.log("조건1이 false이고 조건2가 false입니다");
+      }
+
+      //4. if문안에 if문
+      //   3개 이상 넘어가면 for문 이용
+      if (true) {
+        if (true) {
+          if (true) {
+          } else if (true) {
+          }
+        }
+      }
+
+      //문자열 비교
+      let myStr1 = "abc";
+      let myStr2 = "Abc";
+      //자바 equals함수, JS == !=
+      if (myStr1 == myStr2) {
+        console.log("같아");
+        1;
+      } else {
+        console.log("달라");
+      }
+
+      //prompt로 문자열 배열(리스트) 입력받기
+      //"10 20 30" => 공백으로 분리 => string배열에 가져옴
+      /*let strArray = prompt("숫자 입력").split(" ");
+      for (let i = 0; i < strArray.length; i++) {
+        console.log(srtArray[i]);
+      }
+      */
+
+      //< 연습 문제 >
+      //prompt로 5개의 숫자를 문자열로 입력받고,
+      // 이 안에 홀수의 갯수 출력
+      // 입력 ) 13 23 40 20 10
+      // 출력 ) 홀수의 갯수는 2개
+      let StrArray = prompt("숫자 입력").split(" ");
+      let count = 0;
+      for (let i = 0; i < StrArray.length; i++) {
+        3;
+        if (StrArray[i] & (2 != 0)) {
+          count++;
+        }
+      }
+      console.log("홀수의 갯수는 " + count);
+    </script>
+  </head>
+  <body></body>
+</html>

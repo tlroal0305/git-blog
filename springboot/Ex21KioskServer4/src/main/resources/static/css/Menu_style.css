@@ -1,0 +1,368 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Pretendard-Regular";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.kiosk-box {
+  background-color: white;
+  border: 2px solid #d3d3d3;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 550px;
+  height: 900px;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ad {
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.ad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  margin-top: 5px;
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+
+.headerLogoBox {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.headerLogoBox img {
+  width: 70px;
+}
+
+.welcomeText {
+  width : 100%;
+  height : 30px;
+  display: flex;
+  justify-content: start;
+  margin: 10px
+}
+.welcomeText #nickname{
+  color: red;
+}
+
+.headerRightBox {
+  padding-left: 10px;
+  width: 75%;
+  height: 90%;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.returnButtonBox,
+.headerTextBox {
+  width: 100%;
+  height: 50%;
+}
+
+.returnButtonBox button {
+  float: right;
+  margin-right: 10px;
+  width: 80px;
+  height: 25px;
+  border: 0;
+  background-color: rgb(10, 83, 10);
+  border-radius: 5px;
+  font-weight: 200;
+  color: white;
+  cursor: pointer;
+}
+
+.headerTextBox span {
+  float: left;
+  margin-left: 10px;
+}
+
+.main {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.nav {
+  width: 25%;
+  float: left;
+}
+
+.nav button {
+  margin: 3px 0px 0px 3px;
+  width: 100%;
+  height: 70px;
+  border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: gray;
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.nav button img {
+  padding-top: 5px;
+  width: 100%;
+  height: 65%;
+  object-fit: contain;
+}
+
+.nav button.selected {
+  color: rgb(0, 0, 0);
+}
+
+.section {
+  width: 75%;
+  height: 90%;
+  position: relative;
+}
+
+.sectionMove {
+  position: absolute;
+  top: 90%;
+  left: 25%;
+  width: 75%;
+}
+
+.sectionMove button {
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(18, 65, 12);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.rmBox_Container {
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  /* justify-content: space-around; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.rmBox_inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  position: relative;
+  margin-bottom: 5px;
+  width: 30%;
+  height: 30%;
+  border: 0;
+  border-bottom: 1px solid rgb(236, 236, 236);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: white;
+}
+
+.rmBox_inner img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+.rmBox_title {
+  display: block;
+  width: 90%;
+  height: 25%;
+  text-align: left;
+  padding-left: 5px;
+  font-size: 15px;
+}
+
+.rmBox_money {
+  position: absolute;
+  bottom: -12%;
+  display: block;
+  width: 95%;
+  height: 25%;
+  text-align: right;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+#happyMeal_Text {
+  font-size: 15px;
+  padding-left: 10px;
+  text-align: left;
+  position: absolute;
+  top: -14%;
+  right: 17%;
+  z-index: 1;
+  color: rgb(82, 82, 82);
+}
+
+.cartBox {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+.cartText {
+  display: flex;
+  background-color: rgb(44, 80, 39);
+  color: white;
+  height: 15%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#cartSummary {
+  font-family: "NanumSquareNeo-Variable";
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+#cartTotal {
+  padding-right: 15px;
+}
+
+#cartList {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+#shoppingCartText {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: rgb(109, 109, 109);
+}
+
+.removeCart {
+  position: absolute;
+  top: 80%;
+  right: 1%;
+}
+
+.removeCart button {
+  font-family: "NanumSquareNeo-Variable";
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.cart_class {
+  position: relative;
+}
+.cart_num {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  font-size: 11px;
+  background-color: rgb(218, 6, 6);
+  color: white;
+}
+
+#orderCheck {
+  font-family: "NanumSquareNeo-Variable";
+  border: 0;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  right: 1%;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.goToBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#goToBack,
+#goToPay {
+  font-family: "NanumSquareNeo-Variable";
+  width: 49%;
+  border: 0;
+  margin-top: 5px;
+  border-radius: 5px;
+  height: 30px;
+  background-color: rgb(33, 121, 21);
+  color: white;
+  font-size: 15px;
+}
+
+#goToBack {
+  margin-right: 5px;
+  background-color: rgb(189, 15, 15);
+}
+
+#goToPay:hover {
+  background-color: rgb(34, 102, 25);
+  cursor: pointer;
+}
+
+#goToBack:hover {
+  background-color: rgb(163, 15, 15);
+  cursor: pointer;
+}

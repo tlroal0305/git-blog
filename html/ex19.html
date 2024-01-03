@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>입력 태그 종류들 3</title>
+  </head>
+  <body>
+    <form action="http://www.myserver.com">
+      <input type="text" name="id" id="id" />
+      <!-- hidden속성 : 화면에 표시되지 않지만, 서버에 꼭 필요한 값을 전송할 때 사용 -->
+      <!--              예) 게시물의 DB 인덱스 값을 전달하는 용도 -->
+      <input type="hidden" name="hiddenValue" value="게시물 아이디값" />
+      <!-- form태그에 있는 모든 내용을 action에 작성된 주소로 전송함 -->
+      <input type="submit" value="전송!" /><br />
+
+      <!-- 선택 목록 태그 : select태그 -->
+      <select name="drink">
+        <!-- ctrl + alt + 위/아래 커서 -->
+        <!-- 서버에서는 String drink = "2" -->
+        <option value="1">콜라</option>
+        <option value="2" selected>사이다</option>
+        <option value="3">오렌지쥬스</option>
+        <option value="4">아메리카노</option>
+      </select>
+
+      <!-- 수평선(구분선) 태그 : hr태그 -->
+      <hr />
+
+      <!-- 색상 표현 : 빛의 3원색 -->
+      <!-- R : Res, G : Green, B : Blue, A : Alpha(투명도) -->
+      <!-- 4바이트로 1픽셀 색상을 지정 : RGBA -->
+      <!-- Red : 1byte : 8bit : 0~255 0x00(16진수를 뜻하는 심볼)~0xFF-->
+      <!-- Green : 1byte : 8bit : 0~255 -->
+      <!-- Blue : 1byte : 8bit : 0~255 -->
+      <!-- Alpha : 1byte : 8bit : 0~255 -->
+
+      <!-- 색상 선택 태그 - Color Picker -->
+      <input type="color" name="color" value="#0000FF" /><br />
+
+      <!-- 날짜 선택 -->
+      <input type="date" name="date" value="2023-08-02" />
+      <!-- 날짜-시간 선택 -->
+      <input
+        type="datetime-local"
+        name="datetime"
+        value="2023-08-02T12:27"
+      /><br />
+
+      <!-- 이메일 주소 -->
+      <input type="email" name="email" value="abc@gmail.com" />
+      <input
+        type="email"
+        name="email"
+        value="abc@gmail.com, 123@gmail.com"
+        multiple
+      /><br />
+
+      <!-- 월(달) -->
+      <input type="month" name="month" value="2023-08" /><br />
+
+      <!-- 숫자 -->
+      <input
+        type="number"
+        name="number"
+        value="10"
+        min="5"
+        max="15"
+        step="2"
+      /><br />
+
+      <!-- 범위 -->
+      <input
+        type="range"
+        name="range"
+        value="1"
+        min="1"
+        max="5"
+        step="1"
+      /><br />
+
+      <!-- 많은 양의 텍스트(여러줄)를 입력받을 때 -->
+      <textarea name="memo" cols="30" rows="10">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ut quam minus odio. Minus a, reprehenderit amet magni animi esse deleniti repellendus officia officiis repudiandae sunt quidem vel minima adipisci.</textarea
+      >
+    </form>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        let InputCoin1 = document.getElementById("inputCoin1");
+        let InputCoin2 = document.getElementById("inputCoin2");
+        let Can = document.getElementById("can");
+        let Water = document.getElementById("water");
+        let OutCoin = document.getElementById("outCoin");
+
+        let Coin1 = 1000;
+        let Coin2 = 500;
+
+        let Canpri = 2000;
+        let Waterpri = 700;
+
+        InputCoin1.onclick = () => {
+          OutCoin.innerHTML = Number(OutCoin.innerHTML) + Number(Coin1);
+        };
+
+        InputCoin2.onclick = () => {
+          OutCoin.innerHTML = Number(OutCoin.innerHTML) + Number(Coin2);
+        };
+
+        Can.onclick = () => {
+          if (OutCoin.innerHTML >= 2000) {
+            OutCoin.innerHTML = Number(OutCoin.innerHTML) - Number(Canpri);
+          } else {
+            alert("잔액이 부족합니다");
+          }
+        };
+
+        Water.onclick = () => {
+          if (OutCoin.innerHTML >= 700) {
+            OutCoin.innerHTML = Number(OutCoin.innerHTML) - Number(Waterpri);
+            alert("잔액이 부족합니다");
+          }
+        };
+      };
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0 auto;
+        border: 1px solid black;
+        width: 480px;
+        height: 520px;
+
+        box-shadow: 0px 5px 0px 0px rgb(68, 64, 64);
+      }
+
+      #wrap {
+        border: 2px solid #eee;
+        width: 450px;
+        height: 500px;
+
+        margin: 0 auto;
+        margin-top: 8px;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      #header {
+        text-align: center;
+        padding: 10px;
+      }
+
+      #main {
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      #footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #input {
+        width: 315px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #inputCoin1,
+      #inputCoin2 {
+        border: 1px solid black;
+        width: 150px;
+        height: 30px;
+
+        text-align: center;
+
+        background-color: red;
+        color: white;
+      }
+
+      #can {
+        border: 1px solid black;
+
+        width: 315px;
+        height: 30px;
+        text-align: center;
+        margin-top: 15px;
+
+        background-color: green;
+        color: white;
+      }
+
+      #water {
+        border: 1px solid black;
+
+        width: 315px;
+        height: 30px;
+        text-align: center;
+        margin-top: 15px;
+
+        background-color: rgb(71, 204, 100);
+        color: white;
+      }
+
+      #footer h4 {
+        margin-top: 20px;
+      }
+
+      #outCoin {
+        border: 1px solid black;
+
+        width: 315px;
+        height: 30px;
+        text-align: center;
+
+        background-color: skyblue;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <h4>JavaScript</h4>
+        <br />
+        <h4>자판기 프로그램을 작성</h4>
+        <br />
+      </div>
+
+      <div id="main">
+        <h4>1. 동전 투입 시 잔액 추가</h4>
+        <br />
+        <h4>2. 잔액 부족 시 잔액 부족 팝업</h4>
+        <br />
+        <h4>3. 뽑기 후에 잔액 차감</h4>
+        <br />
+      </div>
+
+      <div id="footer">
+        <div id="input">
+          <div id="inputCoin1">1000원 투입</div>
+          <div id="inputCoin2">500원 투입</div>
+        </div>
+        <div id="can">캔음료 2000원 뽑기</div>
+        <div id="water">생수 700원 뽑기</div>
+        <h4>잔액</h4>
+        <div id="outCoin"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+          body {
+            background-color: rgb(255, 198, 12);
+
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        #page4_header {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 50px;
+        }
+
+        #header_text {
+          color: black;
+          font-size: 20px;
+          font-weight: bold;
+
+          margin-top: 80px;
+          margin-bottom: 10px;
+        }
+
+        button {
+          /* 버튼 스타일 초기화 */
+          all: unset;
+        }
+
+        #order_check {
+          background-color: white;
+          border-radius: 10px;
+          font-weight: bold;
+        }
+
+        #line {
+          border-bottom: 2px dashed rgb(255, 198, 12);
+        }
+
+        #total_price {
+          padding: 20px;
+          font-size: 25px;
+
+          text-align: center;
+        }
+
+        .order_info {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #past_button {
+          background-color: white;
+          border-radius: 0 0 10px 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+
+          padding: 15px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="햄버거파비콘" />
+</head>
+<body>
+<div id="page4_body">
+    <div id="page4_header">
+        <img src="햄버거로고 배경제거.png" width="200" height="63" />
+        <div id="header_text">주문을 확인 하세요.</div>
+    </div>
+
+    <div id="page4_main">
+        <div id="order_check">
+            <div id="total_price">총금액 :</div>
+            <div class="order">
+                <div class="order_info"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page4.footer">
+        <div id="line"></div>
+        <div id="past_button"></div>
+    </div>
+</div>
+</body>
+<script>
+    // 로컬 스토리지에서 데이터 불러오기
+
+    // page5.html에서 저장되었떤 데이터 불러오는 것
+    let setArrMenu = localStorage.getItem("arrMenu");
+    let getArrMenu = JSON.parse(setArrMenu);
+
+    function displayImg(getArrMenu) {
+      // 총금액
+      // 총 금액 표시
+      let sum = 0;
+      for (let menu of getArrMenu) {
+        let count = menu.count;
+        let price = menu.price.replace("\\", "");
+        let price2 = price.replace(",", "");
+
+        let Price = price2 * count;
+
+        sum += Number(Price);
+        console.log(sum);
+      }
+
+      //숫자 세자리(천단위) 콤마찍는 함수
+      let Sum = sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
+      let total_price = document.getElementById("total_price");
+
+      total_price.innerHTML = "총 금액 : \\" + Sum;
+
+      // 메뉴 카트
+      let order_info = document.querySelector(".order_info");
+
+      for (let menu of getArrMenu) {
+        // 각 메뉴 정보를 담는 컨테이너
+        let menuContainer = document.createElement("div");
+        menuContainer.classList.add("menu_container");
+        menuContainer.style.backgroundColor = "white";
+        menuContainer.style.marginLeft = "100px";
+        menuContainer.style.padding = "5px";
+        menuContainer.style.display = "flex";
+
+        menuContainer.style.width = "300px";
+        menuContainer.style.marginTop = "20px";
+
+        // order_img에 주문한 메뉴의 이미지를 가져오는 요소
+        let img = document.createElement("img");
+        img.src = menu.src;
+        img.width = 70;
+        img.height = 75;
+
+        menuContainer.appendChild(img);
+
+        //order_info에 주문한 메뉴 이름을 가져오는 요소
+        let menu_name = document.createElement("div");
+        menu_name.textContent = menu.name;
+
+        menuContainer.appendChild(menu_name);
+
+        menu_name.style.height = "30px";
+        menu_name.style.margin = "5px";
+
+        //order_info에 주문한 메뉴 가격을 가져오는 요소
+        let menu_price = document.createElement("div");
+        menu_price.textContent = menu.price;
+
+        menuContainer.appendChild(menu_price);
+        menu_price.style.height = "30px";
+        menu_price.style.margin = "5px";
+
+        // 수량 수정하는 버튼 요소
+        let buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("button_container");
+
+        buttonContainer.style.display = "flex";
+        buttonContainer.style.marginLeft = "180px";
+        buttonContainer.style.width = "200px";
+        buttonContainer.style.backgroundColor = "white";
+
+        // 마이너스 버튼 요소 생성
+        let minous = document.createElement("button");
+        minous.style.backgroundColor = "green";
+        minous.style.borderRadius = "5PX";
+        minous.style.width = "20px";
+        minous.style.height = "30px";
+        minous.style.color = "white";
+        minous.style.marginBottom = "3px";
+        minous.style.textAlign = "center";
+        minous.textContent = "-";
+        buttonContainer.appendChild(minous);
+        // 마이너스 버튼 클릭시 -1
+        minous.addEventListener("click", function () {
+          if (menu.count > 0) {
+            menu.count -= 1;
+            count.innerHTML = menu.count;
+
+            Sum = parseFloat(Sum.replace("\\", "").replace(",", ""));
+            let updatedSum = 0;
+
+            for (let menu of getArrMenu) {
+              let menu_price = parseFloat(
+                menu.price.replace("\\", "").replace(",", "")
+              );
+              updatedSum -= -(menu_price * menu.count);
+              Sum = updatedSum;
+              Sum = Sum.toString().replace(
+                /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+                ","
+              );
+            }
+            total_price.innerHTML = "총 금액 : \\" + Sum;
+          }
+        });
+
+        //수량 표시
+        let count = document.createElement("div");
+        count.textContent = menu.count;
+        count.style.border = "1px solid black";
+        count.style.width = "30px";
+        count.style.height = "30px";
+        count.style.borderRadius = "5px";
+        count.style.marginBottom = "3px";
+        count.style.textAlign = "center";
+        buttonContainer.appendChild(count);
+
+        // 플러스 버튼 요소 생성
+        let plus = document.createElement("button");
+        plus.style.backgroundColor = "rgb(224, 21, 21)";
+        plus.style.borderRadius = "5px";
+        plus.style.width = "20px";
+        plus.style.height = "30px";
+        plus.style.color = "white";
+        plus.style.marginBottom = "3px";
+        plus.style.textAlign = "center";
+        plus.textContent = "+";
+        buttonContainer.appendChild(plus);
+        // 플러스 버튼 클릭시 +1
+        plus.addEventListener("click", function () {
+          if (menu.count >= 0) {
+            menu.count += 1;
+            count.innerHTML = menu.count;
+
+            Sum = parseFloat(Sum.replace("\\", "").replace(",", ""));
+            let updatedSum = 0;
+
+            for (let menu of getArrMenu) {
+              let menu_price = parseFloat(
+                menu.price.replace("\\", "").replace(",", "")
+              );
+              updatedSum += menu_price * menu.count;
+              Sum = updatedSum;
+              Sum = Sum.toString().replace(
+                /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+                ","
+              );
+            }
+            total_price.innerHTML = "총 금액 : \\" + Sum;
+          }
+        });
+
+        //삭제 버튼
+        let cancle = document.createElement("button");
+        cancle.style.backgroundColor = "green";
+        cancle.style.borderRadius = "5px";
+        cancle.style.width = "85px";
+        cancle.style.height = "30px";
+        cancle.style.color = "white";
+        cancle.style.textAlign = "center";
+        cancle.style.marginLeft = "30px";
+        cancle.style.marginBottom = "3px";
+        cancle.textContent = "삭제하기";
+        cancle.setAttribute("class", menu.name);
+        buttonContainer.appendChild(cancle);
+
+        cancle.addEventListener("click", function () {
+          console.log(this.getAttribute("class"));
+
+          menuContainer.innerHTML = "";
+          buttonContainer.innerHTML = "";
+          line.style.display = "none";
+
+          Sum = parseFloat(Sum.replace("\\", "").replace(",", ""));
+
+          let updatedSum = 0;
+
+          let index = 0;
+          for (let menu of getArrMenu) {
+            if (menu.name === this.getAttribute("class")) {
+              getArrMenu.splice(index, 1);
+              break;
+            }
+            index++;
+          }
+
+          total_price.innerHTML = "총 금액 : \\0";
+
+          for (let menu of getArrMenu) {
+            let menu_price = parseFloat(
+              menu.price.replace("\\", "").replace(",", "")
+            );
+            updatedSum += menu_price * menu.count;
+            Sum = updatedSum;
+            Sum = Sum.toString().replace(
+              /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+              ","
+            );
+
+            total_price.innerHTML = "총 금액 : \\" + Sum;
+          }
+        });
+
+        // 메뉴하나 끝나면 라인 생성
+        let line = document.createElement("div");
+        line.style.borderBottom = "2px dashed rgb(255, 198, 12)";
+        line.style.backgroundColor = "white";
+        line.style.width = "500px";
+
+        // 출력순서
+        order_info.appendChild(line);
+        order_info.append(menuContainer);
+        order_info.appendChild(buttonContainer);
+      }
+    }
+
+    displayImg(getArrMenu);
+
+    let past_button = document.querySelector("#past_button");
+
+    let pastBtn = document.createElement("button");
+    pastBtn.style.backgroundColor = " rgb(224, 21, 21)";
+    pastBtn.style.borderRadius = "5px";
+    pastBtn.style.color = "white";
+    pastBtn.style.width = "120px";
+    pastBtn.style.height = "35px";
+    pastBtn.textContent = "이전으로";
+    pastBtn.style.textAlign = "center";
+
+    pastBtn.addEventListener("click", function () {
+      window.location.href = "page3.html";
+    });
+
+    let nextBtn = document.createElement("button");
+    nextBtn.style.backgroundColor = " green";
+    nextBtn.style.borderRadius = "5px";
+    nextBtn.style.color = "white";
+    nextBtn.style.width = "120px";
+    nextBtn.style.height = "35px";
+    nextBtn.textContent = "결제하기";
+    nextBtn.style.textAlign = "center";
+
+    nextBtn.addEventListener("click", function () {
+      window.location.href = "page6.html";
+    });
+
+    past_button.appendChild(pastBtn);
+    past_button.appendChild(nextBtn);
+</script>
+</html>

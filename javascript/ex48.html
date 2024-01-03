@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력폼 유효성 체크</title>
+    <script>
+      // 유효성 체크하는 방법 2가지
+      // 1. submit pre-catch 방법 : submit(통신)전에 JS로 유효성 체크
+      // 2. button onclick 방법 : 유효성 체크 후에 통신(전송)
+      window.onload = () => {
+        // name으로 form객체를 가져옴
+        let myForm = document.myForm;
+
+        // JS로 submit하는 함수 : submit버튼을 안눌러도 가능
+        //  button onclick 방법
+        // myForm.submit();
+
+        //onsubmit 이벤트를 캐치
+        // = () => {} 화살표 익명 함수 : this 사용 X
+        // 일반 함수를 사용해야함
+        myForm.onsubmit = function () {
+          // 아이디 체크
+          // 입력 값의 유효성 체크
+          let name = document.getElementById("name").value;
+          // null,         길이,             empty 체크
+          if (!name || name.length < 2) {
+            alert("이름이 비어있습니다. 확인바람~");
+            // submit을 하지 X => X
+            return false;
+          }
+          // 비번 체크
+          let password = document.getElementById("pass").value;
+          //null empty, 길이체크
+          if (!password || password.length < 4) {
+            alert("암호가 비어있습니다. 확인해주세요~");
+            return false;
+          }
+          // ==과 ===의 차이
+          // ===는 값과 타입도 같은지 체크
+
+          // 비번과 비번이 같은지 체크
+          let pass_check = document.getElementById("pass-check".value);
+
+          if (!(password === pass_check)) {
+            alert("비번과 비번확인이 같지 않습니다");
+            return false;
+          }
+
+          // submit을 함 => 전송 O
+          return true;
+        };
+      };
+
+      function checkValue() {
+        let myForm = document.myForm;
+
+        let name = document.getElementById("name").value;
+        if (!name || name.length < 2) {
+          alert("이름이 비어있습니다. 확인바람~");
+          return; // 전송하지 않고 그냥 종료 -> 버튼은 전송기능이 없기 때문에 T/F가 없음
+        }
+
+        // 유효성 모두 통과시!
+        myForm.submit();
+      }
+    </script>
+  </head>
+  <body>
+    <form id="myForm" name="myForm" action="http://www.mysite.com">
+      <label for="name">이름</label> <br />
+      <input type="text" name="name" id="name" /> <br />
+      <label for="pass">비밀번호</label> <br />
+      <input type="password" name="pass" id="pass" /> <br />
+      <label for="pass-check">비밀번호 확인</label> <br />
+      <input type="password" name="pass-check" id="pass-check" /> <br />
+      <br />
+      <!-- input submit에는 기본 클릭이벤트가 있음 -->
+      <input type="submit" value="제출" /><br />
+      <!-- submit버튼은 기본적으로 전송이 됨 -->
+      <button type="submit">버튼</button><br /><br />
+
+      <!-- 일반 버튼은 전송 기능X -->
+      <button type="button" onclick="checkValue();">전송 버튼</button>
+    </form>
+  </body>
+</html>

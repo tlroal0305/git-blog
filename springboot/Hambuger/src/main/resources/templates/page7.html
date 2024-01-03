@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=], initial-scale=1.0" />
+    <title>끝</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+          body {
+            background-color: rgb(255, 198, 12);
+
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        body {
+          width: 600px;
+
+          margin-top: 100px;
+        }
+
+        #page7_header {
+          text-align: center;
+        }
+
+        #header_text {
+          text-align: center;
+          font-size: 20px;
+
+          width: 400px;
+
+          margin-top: 50px;
+        }
+
+        #page2_footer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          margin: 150px;
+          margin-top: 450px;
+        }
+
+        #page1_back {
+          color: black;
+          font-size: 15px;
+          font-weight: bold;
+
+          margin-top: 20px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="햄버거파비콘" />
+</head>
+<body>
+<!-- 식사 장소 선택 -->
+<div id="page6_body">
+    <div id="page7_header">
+        <img src="햄버거로고 배경제거.png" width="200" height="63" />
+        <div id="header_text">
+            <p style="font-weight: bold">고객님의 주문번호는 633번입니다.</p>
+            <p style="font-weight: bold">
+                "제품받는곳" 모니터에 주문번호가 표시되면 영수증을 제시하시고 제품을
+                받아가세요
+            </p>
+        </div>
+    </div>
+
+    <div id="page2_footer">
+        <img
+                id="kioskIcon"
+                src="키오크스 아이콘.png"
+                width="100px"
+                height="100px"
+        />
+        <div id="page1_back">메인으로 돌아가기</div>
+    </div>
+</div>
+</body>
+<script>
+    let page2_footer = document.getElementById("page2_footer");
+
+    page2_footer.addEventListener("click", function () {
+      window.location.href = "page1.html";
+    });
+</script>
+</html>

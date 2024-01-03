@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기 프로그램</title>
+    <script>
+      window.onload = () => {
+        let Num1 = document.getElementById("num1");
+        let inputNum2 = document.getElementById("num2");
+        let result = document.getElementById("result");
+        let arrayCal = document.getElementsByClassName("cal-content");
+
+        arrayCal[0].onclick = () => {
+          result.value = Number(inputNum1.value) + Number(inputNum2.value);
+        };
+      };
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 320px;
+        height: 520px;
+
+        border: 5px solid black;
+      }
+
+      #header {
+        padding: 10px;
+      }
+
+      #wrap {
+        width: 300px;
+        height: 500px;
+        border: 1px solid black;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      li {
+        display: flex;
+        list-style: none;
+
+        padding: 10px;
+      }
+
+      #main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #calc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cal-content {
+        width: 200px;
+        height: 30px;
+        background-color: blue;
+        color: white;
+
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">계산기 프로그램</div>
+
+      <div id="main">
+        <label>숫자1</label><input type="text" name="Num1" id="num1" />
+        <label>숫자2</label><input type="text" name="Num2" id="num2" />
+        <label>연산결과</label><input type="text" name="result" id="result" />
+
+        <div id="calc">
+          <ol>
+            <li><div class="cal-content">덧셈</div></li>
+            <li><div class="cal-content">뺄셈</div></li>
+            <li><div class="cal-content">곱셈</div></li>
+            <li><div class="cal-content">나눗셈</div></li>
+            <li>
+              <div class="cal-content" style="background-color: red">
+                지우기
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

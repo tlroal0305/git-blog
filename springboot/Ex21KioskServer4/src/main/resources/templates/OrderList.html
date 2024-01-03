@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcdonald kiosk2</title>
+    <link
+            rel="icon"
+            href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<div class="kiosk-box">
+    <div class="wrap">
+        <div class="top-box">
+            <div class="textBox">
+                <h4>키오스크 관리자 화면</h4>
+            </div>
+        </div>
+        <div class="middle-box">
+            <h4>주문  목록</h4>
+            <table class="table table-striped">
+                <tr>
+                    <th>번호</th>
+                    <th>주문 코드</th>
+                    <th>주문 총 금액</th>
+                    <th>임시 번호</th>
+                    <th>주문 상태</th>
+                    <th>주문 일시</th>
+                    <th class="text-center">수정</th>
+                    <th class="text-center">삭제</th>
+                </tr>
+                <tr th:each="order, status : ${ orderList }">
+                    <!-- Entity에 있지만 보이지 않아도 될 요소들 -->
+                    <input type="hidden" id="cartItemCode1" name="cartItemCode1" th:value="${order.cartItemCode1}" />
+                    <input type="hidden" id="cartItemCode2" name="cartItemCode2" th:value="${order.cartItemCode2}" />
+                    <input type="hidden" id="cartItemCode3" name="cartItemCode3" th:value="${order.cartItemCode3}" />
+                    <input type="hidden" id="cartItemCode4" name="cartItemCode4" th:value="${order.cartItemCode4}" />
+                    <input type="hidden" id="cartItemCode5" name="cartItemCode5" th:value="${order.cartItemCode5}" />
+                    <input type="hidden" id="orderTotalCount" name="orderTotalCount" th:value="${order.orderTotalCount}" />
+                    <input type="hidden" id="orderPayType" name="orderPayType" th:value="${order.orderPayType}" />
+                    <!-- Entity에 있고 보여야 할 요소들 -->
+                    <td th:text="${ order.orderNo }"></td>
+                    <td th:text="${ order.orderCode }"></td>
+                    <td th:text="${ order.orderTotalPrice }"></td>
+                    <td th:text="${ order.orderNumber }"></td>
+                    <td th:text="${ order.orderState }"></td>
+                    <td th:text="${ order.orderDatetime }"></td>
+                    <td class="text-center">
+                        <!-- DB속 고유키로 설정한 Key를 이용하여 수정, 삭제 정보를 불러와야함 -->
+                        <a
+                                th:href="|/orderUpdateForm?orderNo=${ order.orderNo }|"
+                                class="btn btn-primary"
+                                role="button"
+                        >수정</a
+                        >
+                    </td>
+                    <td class="text-center">
+                        <!-- GET 요청  -->
+                        <!--  -->
+                        <a
+                                th:href="|/OrderDelete?orderNo=${ order.orderNo }|"
+                                class="btn btn-danger"
+                                role="button"
+                        >삭제</a
+                        >
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

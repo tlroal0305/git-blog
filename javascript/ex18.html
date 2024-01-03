@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문 - break문, continue문</title>
+    <script>
+      //break문 : 해당 반복문을 바로 종료 ( 증감문으로 안감 )
+      //continue문 : 해당 회차를 건너뜀 ( 아래 코드 수행X, 증감문으로 )
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        if (i > 5) {
+          break;
+        }
+      }
+
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+          continue; //아래 코드 생략
+        }
+        console.log(i); //홀수일때만 출력
+      }
+
+      //2중 반복문에서 break, continue를 사용할 때, 레이블 사용
+      loop1: for (let i = 0; i < 10; i++) {
+        loop2: for (let j = 0; j < 10; j++) {
+          console.log("i:" + i + " j: " + j);
+          if (j > 5) {
+            continue loop1; //i루프로 continue
+          }
+          if (j > 3) {
+            break loop1; //i루프를 break
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

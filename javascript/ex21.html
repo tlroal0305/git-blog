@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2차 배열</title>
+    <script>
+      //1차 배열
+      let nums = [10, 20, 30];
+
+      //2차 배열                         자바 : int[][] nums = { {}, {}, {} }
+      //                                        int[][] nums = new int [3][3]
+      let nums2 = [
+        //1열 2열 3열 - j루프
+        [10, 20, 30], //1행 row - i루프
+        [40, 50, 60], //2행 row
+        [70, 80, 90], //3행 row
+      ];
+      //전체 순환
+      for (let i = 0; i < nums2.length; i++) {
+        for (let j = 0; j < nums2[i].length; j++) {
+          console.log(nums2[i][j]);
+        }
+      }
+
+      //2차 배열
+      let data1 = [[], [], []];
+      //or
+      let data2 = [];
+      data[0] = [10, 20, 30];
+      data[1] = [40, 50, 60];
+
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data[i].length; j++) {
+          console.log(dara[i][j]);
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

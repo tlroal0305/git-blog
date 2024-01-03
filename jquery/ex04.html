@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ex04 -->
+    <title>연습문제1</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+      // 연습문제1
+      //jquery를 이용하여
+      //1.과일이름들만 글자색을 red로 바꾸시오.
+      //2.모든 목록 항목(li태그)의 배경색을 organge로 바꾸시오.
+      $(() => {
+        $("li").css("background-color", "orange");
+        $("#parent > ul > li").css("color", "red");
+        $("li:eq(1)").css("color", "blue");
+        $("li:eq(2)").css("color", "blue");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="parent">
+      <h2>Header2</h2>
+      <ul>
+        <li>Apple</li>
+        <li>Mongo</li>
+        <li>Banana</li>
+        <li>Peach</li>
+        <li>Melon</li>
+      </ul>
+      <div>
+        <ul>
+          <li>Dog</li>
+          <li>Cat</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

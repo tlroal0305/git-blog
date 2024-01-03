@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Mcdonald kiosk</title>
+    <link rel="stylesheet" type="text/css" href="./css/cart_style.css" />
+    <link
+      rel="icon"
+      href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+  </head>
+  <body>
+    <div class="kiosk-box">
+      <div class="wrap">
+        <div id="orderCheck">주문을 확인하세요.</div>
+        <div class="cartIn">
+          <div id="cartList"></div>
+          <div class="cartTotalBox">
+            <div id="cartQuantity"></div>
+            <div id="cartTotal"></div>
+          </div>
+          <div id="buttonBox">
+            <button id="additionalOrderButton">추가 주문</button>
+            <button id="payButton">결제하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //a = month
+      let a = prompt();
+      //b = date
+      let b = prompt();
+
+      function solution(a, b) {
+        let day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+        // 현재 날짜와 시간을 나타내는 생성자 함수
+        // 날짜나 시간을 불러내려면 꼭 생성
+        let week = new Date("2023-" + a + "-" + b);
+        // getDay(현재 요일을 나타냄)
+        return day[week.getDay()];
+      }
+
+      console.log(solution(a, b));
+    </script>
+  </head>
+  <body></body>
+</html>

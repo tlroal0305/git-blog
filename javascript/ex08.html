@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습 문제</title>
+    <!-- 1. hi~ javascript를 alert 창으로 출력 -->
+    <!-- 2. let str1 = Hi -->
+    <!--    let str1 = ECMA Script! -->
+    <!--    str1과 srt2를 연결하여 alert로 출력 -->
+    <!-- 3. 콘솔 창으로 hello ECMA Script! 출력 -->
+    <!-- 4. document.write문으로 테이블 태그 출력 -->
+    <!--    출력 양식 : -->
+    <!--    +------+------+----------+-->
+    <!--    |학번 | 이름 | 국어 점수 | -->
+    <!--    +------+------+----------+-->
+    <!--    |  010 | 길동 |    80    | -->
+    <!--    +------+------+----------+-->
+    <!-- 5. prompt로 수학 점수를 입력 받아 출력 -->
+    <!--    당신의 수학 점수는 ? 70입력 후 -> 수학 점수는 70점 입니다 -->
+    <!-- 6. 정수 3개를 입력받아, 총합을 반환하는 함수형 변수(익명함수)를 선언/실행 후 출력 -->
+    <!--    입력   -->
+    <!--    10, 20, 30 -->
+    <!--    출력    -->
+    <!--    60 -->
+    <!-- 7. 마우스 오버/아웃 이벤트를 이용하여, img태그의 이미지가 바뀌도록 해 -->
+    <script>
+      //1.
+      alert("hi~ javascript");
+
+      //2.
+      let str1 = "hi";
+      let str2 = "ECMA Script!";
+      alert(str1 + " " + str2);
+
+      //3.
+      console.log("hello ECMA Script~");
+
+      //4.
+      document.write("<table border = '1' ");
+      document.write("<tr>");
+      document.write("<th>학번</th>");
+      document.write("<th>이름</th>");
+      document.write("<th>국어 점수</th>");
+      document.write("</tr>");
+      document.write("<tr>");
+      document.write("<td>010</td>");
+      document.write("<td>홍길동</td>");
+      document.write("<td>80</td>");
+      document.write("</tr>");
+      document.write("</table>");
+
+      //5.
+      let mathScore = prompt("당신의 수학 점수는? ");
+      console.log("수학 점수는 " + mathScore);
+
+      //6.
+      let sum = (a, b, c) => {
+        return a + b + c;
+      };
+      console.log(sum(10, 20, 30));
+
+      //7.
+      <img
+        width="100"
+        height="100"
+        src="apple.png"
+        alt="사과"
+        onmouseover="this.src='bananas.png'"
+        onmouseout="this.src='apple.png'"
+      />;
+
+      //8
+      /*
+      자바스크립트의 데이터 타입에 대해서 공백을 채우시오.
+      1. 숫자를 담는 데이터 타입 : ( number )
+      2. 문자열을 담는 데이터 타입:( string )
+      3. 논리값을 담는 데이터 타입:( boolean )
+      4. 선언 또는 초기화 되지 않는 데이터의 타입: ( console.log(typeof 변수); )
+      5. 객체타입(배열 또는 key-value객체):( 배열,리스트 / map )
+      6. 함수타입:(                       )
+*/
+    </script>
+  </head>
+  <body></body>
+</html>

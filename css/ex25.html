@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테두리선 속성 - border</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        /* CSS 한줄 표현, 단축 표현 */
+        /*      두께  타입    색상 */
+        border: 10px solid salmon;
+
+        border-width: 20px;
+        /* dashed : 줄선, solid : 실선, dotted : 점선*/
+        border-style: solid;
+        border-color: blue;
+
+        /* 모서리를 둥글게 */
+        /* 네군데 모서리 : LT, RT, RB. LB */
+        border-radius: 10px;
+        /*            LT,RB  RT,LB */
+        border-radius: 10px 30px;
+        /*              LT   RB   RT   LB */
+        border-radius: 10px 20px 30px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML과 innerText 다루기</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      //JS : 객체.innerHTML = ""; 객체.innerText = "";
+      //jQuery : innerHTML html() - 가져오기, html('값') - 설정하기
+      //          innerText text() - 가져오기, text('값') - 설정하기
+      $(function () {
+        $(".innerHTML").html("<ins> HTML값 설정 </ins>");
+        console.log($(".innerHTML").html()); // 값 읽어오기
+        $(".innerText").text("<ins> Text값 설정 </ins>");
+        console.log($(".innerText").text());
+      });
+    </script>
+  </head>
+  <body>
+    <h1 class="innerHTML">innerHTML</h1>
+    <h1 class="innerText">innerText</h1>
+  </body>
+</html>

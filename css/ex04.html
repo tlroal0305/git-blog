@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>id 선택자, class 선택자</title>
+    <!-- id(유일) : 문서안에서 유일한 태그로 지정시 -->
+    <!-- class(묶음) : 문서안에서 여러 개의 태그를 묶어서 지정할 때 -->
+    <!-- id는 심볼 # -->
+    <!-- class는 점 . -->
+
+    <style>
+      #header1 {
+        color: indianred;
+      }
+      #header2 {
+        color: indigo;
+      }
+      .myclass {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- id는 무조건 다르게  -->
+    <h1 id="header1">제목 태그 H1</h1>
+    <h1 id="header2">제목 태그 H1</h1>
+    <p class="myclass">문단태그</p>
+    <a class="myclass" href="#">앵커 태그 a</a>
+  </body>
+</html>

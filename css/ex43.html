@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플렉서블 박스 - flexbox</title>
+    <!-- 레이아웃 배치용으로 : IE 11부터 지원 시작 -->
+    <style>
+      .container {
+        border: 1px solid #222;
+        background-color: #eee;
+
+        display: flex;
+        /* row, row-reverse, column, column-reverse */
+        flex-direction: column-reverse;
+      }
+      .box {
+        width: 80px;
+        background-color: green;
+        margin: 5px;
+      }
+      p {
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+    </div>
+  </body>
+</html>

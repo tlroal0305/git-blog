@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Mcdonald kiosk</title>
+    <link
+      rel="icon"
+      href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/Thanks_styles.css" />
+  </head>
+  <body>
+    <div class="kiosk-box">
+      <div class="wrap">
+        <div class="inBox">
+          <div id="logo">
+            <img src="./img/Mcdonald_Logo.png" alt="" />
+          </div>
+          <div class="thanksTxt">
+            고객님의 주문번호는 <span id="orderNumber"></span>번입니다. <br />
+            <span>감사합니다.</span>
+            <span>회원님의 적립금은</span>
+            <span id="nickname" th:text="|${memberPoint}|"></span>
+            <span>원 입니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/thanks.js"></script>
+  </body>
+</html>

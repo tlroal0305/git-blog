@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>css연습문제 - float속성</title>
+    <!-- 아래와 같이 배치하시오. -->
+    <!-- box1  |  box2  | box3  -->
+    <!-- box4  |  box5          -->
+    <style>
+      body * {
+        border: 1px solid red;
+      }
+      div {
+        display: block;
+        width: 100px;
+        height: 50px;
+        background-color: orange;
+        border: 2px solid black;
+
+        overflow: hidden;
+      }
+      div:nth-child(2n + 1) {
+        background-color: aqua;
+      }
+      #box1 {
+        float: left;
+      }
+      #box2 {
+        float: left;
+      }
+      #box3 {
+        float: left;
+      }
+      #box4 {
+        clear: both;
+        float: left;
+      }
+      #box5 {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3</div>
+    <div id="box4">박스4</div>
+    <div id="box5">박스5</div>
+  </body>
+</html>

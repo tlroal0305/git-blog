@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML과 innerText</title>
+    <script>
+      // 공통점 : HTML태그의 내용을 문자열로 보관
+      // innerHTML : 문자열이 HTML태그로 인식
+      // innerText : 문자열이 단순 Text로 인식
+    </script>
+  </head>
+  <body>
+    <h1 id="innerHTML">innerHTML 내용</h1>
+    <h1 id="innerText">innerText 내용</h1>
+    <script>
+      let e1 = document.getElementById("innerHTML");
+      e1.innerHTML = "<ins>변경된 innerHtml 내용</ins>";
+      let d2 = document.getElementById(innerText);
+      e2.innerText = "<ins>변경된 innerHtml 내용</ins>";
+    </script>
+  </body>
+</html>

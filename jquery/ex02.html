@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onload함수 대신 ready함수</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      //ES6
+      window.onload = () => {
+        //getElementsByTagName -> s때문에 arry 사용
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[0].innerHTML += "<br>onload함수 호출";
+      };
+
+      //jquery
+      //jquery로 document잡겠다는 의미
+      $(document).ready(() => {
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[0].innerHTML += "<br>ready함수 호출";
+      });
+      //좀 더 간결하게, onload를 집어 넣음
+      $(() => {
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[0].innerHTML += "<br>$()함수 호출";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>문서 로딩 완료</h1>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>절대 좌표/상대 좌표 - position속성</title>
+    <!-- 웹 페이지를 만드는 과정 -->
+    <!-- 화면 레이아웃(배치) 과정 -->
+    <!-- 1. html/head/body태그 -->
+    <!-- 2. 최상위 태그 div-->
+    <!-- 3. 시멘틱 태그 header/nax/main/section/article/aside/footer -->
+    <!-- 4. div로 감싼다 -->
+    <!-- 5. block/inline/inline-block -->
+    <!-- 6. float(줄바꿈), flex => 자리 배치 -->
+    <!-- 7. width, height -->
+    <!-- 8. 마진, 패딩 -->
+    <!-- 9. overflow:hidden -->
+    <!-- 10. position속성 : 절대/상대 좌표-->
+    <!--                    상대 좌표 ? 기본값, 현재 위치에서 떨어진 위치(offset) -->
+    <!--                    절대 좌표 ? 부모 원점(0, 0)으로 떨어진 절대값-->
+    <!--                                쓰는 이유 1. 요소 위에 요소를 중첩시킬 때 -->
+    <!--                                          2. 부모 요소에서 간단히 이동시킬 때 -->
+    <!--                    스크린 좌표계 ?  LeftTop이 0,0 -->
+    <!--                                     PC해상도 1024x768 0부터 1023, 0부터 767 -->
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+      }
+
+      #red {
+        background-color: red;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        /* z-index : 높낮이를 정할 수 있음 */
+        /*           정수로서 높을수록 윗쪽에 위치 */
+        z-index: 3;
+      }
+
+      #green {
+        background-color: green;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        z-index: 2;
+      }
+
+      #blue {
+        background-color: blue;
+        position: absolute;
+        left: 80px;
+        top: 80px;
+        z-index: 1;
+      }
+      #yellow {
+        background-color: yellow;
+        width: 50px;
+        height: 50px;
+        /* absolute : 부모의 오른쪽에서 +10방향 */
+        /*            yellow의 부모는 red */
+        /* relative : 자기 원래의 위치에서 +10방향 */
+        position: relative;
+        left: -10px;
+        top: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 두개 다 같음 -->
+    <!-- <header></header> -->
+    <!-- <div id="header"></div> -->
+    <div id="red">
+      <div id="yellow"></div>
+    </div>
+    <div id="green"></div>
+    <div id="blue"></div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 객체 선택</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      //ES6 문서 객체 선택
+      // getELementById, sByClass, sByTagName, querySelector(), querySelectorAll()
+      //      단수         복수       복수          단수              복수
+
+      //jquery 문서 객체 선택
+      // 예) $('#id'), $('.class')
+      $(function () {});
+      $(() => {
+        //js에서 css적용
+        // document.querySelector('id-h1').style.backgroundColor = ' red ';
+
+        //아이디 선택 후 css적용
+        $("#id-h1").css("background-color", "yellow");
+
+        // 클래스로 선택 후
+        $(".class-h1").css("background-color", "pink");
+
+        //여러 클래스 선택 후
+        $(".class-h1, .item").css("background-color", "aqua");
+
+        //태그 선택 후
+        $("h1, p").css("color", "green");
+
+        //속성 선택 후
+        $("input[name=id]").css("background-color", "brown");
+        $("input[name=pw]").css("background-color", "gray");
+
+        //여러개 선택 후 배열 순환
+        // js : 배열 순환 for문 forEach문
+        // jquery : each문
+        $("h1").each(function (index, item) {
+          console.log(index);
+          console.log(item);
+        });
+
+        //값 value 가져오기
+        // eq(0) : nth-child의 첫번째와 같음
+        let value = $("input:eq(0)").val();
+        console.log("value: " + value);
+        $("input:eq(0)").val("myID입니다");
+      }); //this 사용X
+    </script>
+  </head>
+  <body>
+    <h1>h1 제목 태그</h1>
+    <p>p 문단태그 입니다. p 문단태그 입니다.</p>
+    <h2>h2 제목 태그</h2>
+    <h1 id="id-h1">h1 제목 태그</h1>
+    <h1 class="class-h1 select">h1 제목 태그</h1>
+    <h1 class="item select choice on">h1 제목 태그</h1>
+    <input type="text" name="id" value="myID" /><br />
+    <input type="password" name="pw" value="myPW" />
+  </body>
+</html>

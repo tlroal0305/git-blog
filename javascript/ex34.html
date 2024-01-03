@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 객체 선택 함수(DOM)</title>
+    <script>
+      // 문서 객체 선택하기
+      // 1. 아이디로 선택 : getElementById(id) - 객체로 반환
+      //  2. 클래스로 선택 : getElementByClassname(class) - 배열
+      //  3. 태그로 선택 : getElementsByTagname (tag) - 배열
+      // 4. CSS선택자로 선택 : querySelecter(css선택자) - 객체
+      //                       querySelectorAll (css선택자) - 배열
+      window.onload = () => {
+        //id로 찾기
+        let h1 = document.getElementById("header1");
+        h1.innerHTML = "제목태그 1 찾음!";
+
+        //class로 찾기
+        let arrayH2 = document.getElementsByClassName("header-h2");
+        for (let h2 of arrayH2) {
+          h2.innerHTML = "제목태그 3,4,5, 찾음";
+        }
+
+        //tag로 찾기
+        let arrayP = document.getElementsByTagName("p");
+        for (let p of arrayP) {
+          p.innerHTML = "문단 태그 3개 찾음";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="header1">제목 태그1</h1>
+    <h1 id="header2">제목 태그2</h1>
+    <h2 class="header-h2">제목 태그3</h2>
+    <h2 class="header-h2">제목 태그4</h2>
+    <h2 class="header-h2">제목 태그5</h2>
+    <p>문단 태그 p</p>
+    <p>문단 태그 p</p>
+    <p>문단 태그 p</p>
+  </body>
+</html>

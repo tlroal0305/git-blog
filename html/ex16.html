@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>입력 양식 태그 : form태그</title>
+    <!-- 로그인/회원가입 화면에서 사용자의 입력을 받아, 서버로 전송 -->
+
+    <!-- 웹브라우저가 서버에 데이터를 전송하는 방법 -->
+    <!-- 1. form태그 통신 : GET/POST 통신 방식  -->
+    <!-- 2. 주소줄을 이용한 GET 방식 -->
+    <!-- 3. Java Script를 이용한 통신 방식 : ajax, fetch, axios-->
+
+    <!-- HTTP GET 방식 -->
+    <!-- http://localhost:3000/login?id=admin&pw=1234 -->
+    <!-- http : 통신 방식 -->
+    <!-- :// : 구분자 -->
+    <!-- localhost(127.0.0.1) : 서버 주소, 내 PC가 서버로 동작중 -->
+    <!-- 3000: 포트 번호, 프로그램마다 사용하는 인터넷 번호 -->
+    <!-- /login : 경로, 프로그램안의 경로 -->
+    <!-- ? : 구분자 -->
+    <!-- id=admin&pw=1234 : id가 admin이고, pw가 1234 키-값 -->
+
+    <!-- 연습문제 -->
+    <!-- GET방식의 주소 문자열을 완성하시오. -->
+    <!-- 요구사항 -->
+    <!-- 1. HTTP GET방식 -->
+    <!-- 2. 서버 주소는 WWW.mysite.com(172.182.381.273) -->
+    <!-- 3. 포트 번호는 8080 -->
+    <!-- 4. 경로는 /mupage/qna -->
+    <!-- 5. 보내고자 하는 데이터는 phone = 01012341234, address = 한양 -->
+
+    <!-- 한글은 URL Encoding(암호화)됨 -->
+    <!-- htt://WWW.mysite.com(172.182.381.273):8080/mypage/qna?phone=01012341234&address=한양-->
+    <!-- = -->
+    <!-- htt://172.182.381.273:8080/mypage/qna?phone=01012341234&address=한양-->
+
+    <!-- 도메인 네임 -->
+    <!-- IP주소(172.182.381.273)를 영문이나 한글명으로 바꿔주는 것 -->
+    <!-- 도메인 네임 서버 -->
+    <!-- 도메인 네임을 IP주소로 바꿔주는 서버 -->
+    <!-- 도메인 네임을 구매하는 방법 : 가비아, 후이즈, 카페24, 아마존, Route53 -->
+
+    <!-- IP주소 : 인터넷상의 유일한 PC주소 -->
+    <!-- IPv4 -->
+    <!-- 0~255.0~255.0~255.0~266 -->
+    <!-- 127.0.0.1 : 내 PC -->
+    <!-- 192.168.0.1 : 인트라넷 기본 주소, 무선 공유기(IPTIME) -->
+
+    <!-- HTTP POST 방식 -->
+    <!-- http://localhost:3000/login -->
+    <!-- 실제 데이터는 http 통신 패킷(512바이트)안의 body부분에 들어감 -->
+
+    <!-- 크롬 브라우저(엣지) 개발자 모드 : F12 단축키 -->
+    \
+  </head>
+  <body>
+    <!-- form태그 : input태그 내용을 서버로 전송-->
+    <!-- input은 단태그 -->
+    <!-- action속성 : 서버 주소 -->
+    <!-- method속성 : 전송 방식 -->
+    <!-- type text : 문자열 -->
+    <!--      password : 문자열 -->
+    <!--      file : 파일 전송 -->
+    <!--      submit : 전송 실행 버튼 -->
+    <!-- name속성 : 서버에서 전송받을 매개변수 이름 -->
+    <!--          : String getDate(String id, String pw, File file) -->
+
+    <form action=" http:myserver.com" method="POST">
+      <input type="text" name="id" /><br />
+      <input type="password" name="pw" /><br />
+      <input type="file" name="file" /><br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

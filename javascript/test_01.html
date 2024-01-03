@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력폼 유효성 체크</title>
+    <script>
+      function valueCheck() {
+        let myform = document.myform;
+
+        let name = document.getElementById("name").value;
+        if (!name || name.length < 2) {
+          alert("아이디를 다시 확인해주세요.");
+          return; // 전송하지 않고 그냥 종료 -> 버튼은 전송기능이 없기 때문에 T/F가 없음
+        }
+
+        let password = document.getElementById("pass").value;
+        if (!password || password.length < 4) {
+          alert("비밀번호 입력안됨.");
+          return;
+        }
+
+        let pass_check = document.getElementById("pass-check").value;
+        if (!(password === pass_check)) {
+          alert("비밀번호와 비밀번호 확인이 틀립니다. 확인해주세요");
+          return;
+        }
+        // 유효성 모두 통과시!
+        myform.submit();
+      }
+    </script>
+  </head>
+  <body>
+    <form id="myform" name="myform" action="http://www.mysite.com">
+      <label for="name">이름</label> <br />
+      <input type="text" name="name" id="name" /> <br />
+      <label for="pass">비밀번호</label> <br />
+      <input type="password" name="pass" id="pass" /> <br />
+      <label for="pass-check">비밀번호 확인</label> <br />
+      <input type="password" name="pass-check" id="pass-check" /> <br />
+      <br /><br />
+      <button type="button" onclick="valueCheck();">회원가입</button>
+    </form>
+  </body>
+</html>

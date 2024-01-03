@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마진과 패딩</title>
+    <!-- 마진 : 다른 요소의 테두리와의 간격 -->
+    <!-- 패딩 : 내용물과 테두리선과의 간격 -->
+    <style>
+      body {
+        border: 10px solid navy;
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        /* 상하좌우 */
+        margin: 10px;
+        /*      상하 좌우 */
+        margin: 10px 20px;
+        /* 시계방향 상하좌우 */
+        margin: 10px 20px 30px 40px;
+        /* 따로따로 */
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        margin-right: 40px;
+        padding: 10px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+      span {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: slateblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span> </span>
+    </div>
+  </body>
+</html>

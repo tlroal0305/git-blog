@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Mcdonald kiosk2</title>
+    <link
+      rel="icon"
+      href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/select_style.css" />
+  </head>
+  <body>
+    <div class="kiosk-box">
+      <div class="wrap">
+        <div class="top-box">
+          <div class="logoBox">
+            <img src="./img/Mcdonald_Logo.png" alt="" />
+          </div>
+          <div class="textBox">
+            <span id="select_txt">식사하실 장소를 선택해주세요.</span>
+          </div>
+        </div>
+        <div class="middle-box">
+          <div class="buttonbox">
+            <button id="storeButton">
+              <div class="buttonImg">
+                <img src="./img/burger.png" alt="매장" />
+              </div>
+              <span id="dineIn">매장에서 식사</span>
+            </button>
+            <button id="takeOutButton">
+              <div class="buttonImg">
+                <img src="./img/takeout.jpg" alt="테이크아웃" />
+              </div>
+              <span id="takeOut">테이크 아웃</span>
+            </button>
+          </div>
+        </div>
+        <div class="selectLanguage">
+          <span>Please select your language</span>
+          <button id="KorButton">한국어</button>
+          <button id="EngButton">English</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/order.js"></script>
+  </body>
+</html>

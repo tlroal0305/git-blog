@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>웹프로트엔드 종합실습 - 키오스크</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="add(1)">상품1</button>
+      <button onclick="add(2)">상품2</button>
+      <button onclick="add(3)">상품3</button>
+    </div>
+
+    <div>
+      <div id="cartList"></div>
+      <div><button onclick="removeAll();">비우기</button></div>
+    </div>
+
+    <script>
+      //Model : data
+      let arrayCart = [];
+
+      //Control : Code
+      function add(productIndex) {
+        //이미 담겨있는가?
+        let found = false;
+        for (let cart of arrayCart) {
+          if (cart.id == productIndex) {
+            found = true;
+
+            //cart.count += 1;
+            cart.cartItemAmount += 1;
+          }
+        }
+
+        if (found == false) {
+          arrayCart.push({
+            id: productIndex,
+            name: "product" + productIndex,
+            image: "product" + productIndex + ".png",
+            count: 1,
+          });
+        }
+
+        dispCart();
+      }
+      function removeAll() {
+        arrayCart = [];
+
+        dispCart();
+      }
+      //View : HTML/CSS
+      function dispCart() {
+        let cartList = document.getElementById("cartList");
+        //지우기
+        cartList.innerHTML = "";
+
+        for (let cart of arrayCart) {
+          let div = document.createElement("div");
+          div.setAttribute("class", "cart_class");
+
+          let img = document.createElement("img");
+          img.setAttribute("src", "./" + cart.image);
+          img.style.width = "100px";
+          img.style.height = "100px";
+          div.append(img);
+
+          let span = document.createElement("span");
+          span.innerHTML = cart.count;
+          div.append(span);
+
+          cartList.append(div);
+        }
+      }
+    </script>
+  </body>
+</html>

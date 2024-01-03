@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // split() -> ()안 기준으로 문자열을 잘라 배열에 잘라진 문자열을 저장
+      let str = prompt("문자열을 입력하세요").split(" ");
+      let result = "";
+
+      for (let Str of str) {
+        // slice(start index, end index) -> 시작인덱서부터 끝나는 인덱스까지 복사한 값들을 담은 새로운 배열 생성
+        result += Str.slice(0, 1);
+      }
+
+      console.log(result);
+    </script>
+  </head>
+  <body></body>
+</html>

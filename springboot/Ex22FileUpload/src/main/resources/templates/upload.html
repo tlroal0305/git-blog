@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>파일 업로드</title>
+</head>
+<body>
+<h1>file upload</h1>
+<form method="post" action="/upload" enctype="multipart/form-data">
+<!-- multiple="multiple" : 파일 여러개 설정 가능-->
+  <button type="file" for="uploadfile" class="btn btn-primary">
+    변경
+  </button>
+  <!-- input을 숨기기 위함 -->
+  <div style="display : none">
+    <input type="file" id="uploadfile" name="uploadfile" multiple="multiple">
+  </div>
+  <input type="submit" value="Upload">
+</form>
+</body>
+</html>

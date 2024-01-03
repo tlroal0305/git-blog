@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스 추가/삭제</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(() => {
+        //JS에서
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[1].classList.add("class2");
+        // h1Array[0].classList.remove("class이름");
+
+        //jQuery에서
+        $("h1:eq(2)").addClass("class3");
+        $("h1:eq(2)").remove("class3");
+
+        $("h1").each(function (index, item) {
+          $(item).addClass("class" + (index + 1));
+
+          $("h1:eq(2)").attr("id", "id1");
+          $("h1:eq(2)").attr("name", "name1");
+          $("h1:eq(2)").attr("src", "image.pang");
+        });
+      });
+    </script>
+    <style>
+      .class1 {
+        background-color: red;
+      }
+      .class2 {
+        background-color: green;
+      }
+      .class3 {
+        background-color: blue;
+      }
+      .class4 {
+        background-color: yellow;
+      }
+      .class5 {
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="class1">item-1</h1>
+    <h1>item-2</h1>
+    <h1>item-3</h1>
+    <h1>item-4</h1>
+    <h1>item-5</h1>
+  </body>
+</html>

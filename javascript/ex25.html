@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수형 변수</title>
+    <script>
+      // 프로그래밍 언어의 세대별 특징
+      //1세대 언어 : 절차형 언어 - 순차적인 처리 - C언어/베이직/어셈블리어/포트란/코볼
+      //2세대 언어 : 객체지향 언어 - 클래스(객체) - 자바/C#/C++/Objectvie-C
+      //3세대 언어 : 함수형 언어 - 코드블럭 비동기처리 - JS/파이썬/Go/Swift/Kortlin
+
+      //일반 함수
+      function myFunc() {
+        console.log("myFunc 호출");
+      }
+
+      myFunc();
+
+      //함수형 변수 선언 - 코드블럭(함수)을 변수처럼 선언한 것
+      let varFunc = function () {
+        console.log("varFunc 호출");
+      };
+      varFunc();
+
+      let varFuncArrow = () => {
+        console.log("varFuncArrow 호출");
+      };
+      varFuncArrow();
+
+      //매개변수로 함수형 변수를 전달
+      function myFunc2(varFunc2) {
+        varFunc2();
+      }
+
+      myFunc2(varFunc);
+
+      //일반 함수에 매개변수로 값과 코드를 전달
+      function myFunc3(param1, param2, sumFunc) {
+        return sumFunc(param1, param2);
+      }
+
+      let sumFunc = (param1, param2) => {
+        return param1 + param2;
+      };
+
+      let result = myFunc3(10, 20, sumFunc);
+      console.log(result);
+
+      //< 연습문제 >
+      //함수형변수 funcMax를 선언하고,
+      //매개변수 정수 2개을 받아서, 더 큰수를 반환한다.
+      //일반함수 max를 선언하고, 매개변수 2개는 정수로, 나머지 1개는 함수형변수로
+      //로 입력받고, 결과를 출력하시오.
+      // var result = max( 10, 20, funcMax );
+      function funcMax(num1, num2, max) {
+        return max(num1, num2);
+      }
+
+      let max = (num1, num2) => {
+        return Math.max(num1, num2);
+      };
+
+      var result2 = max(10, 20, funcMax);
+      console.log(result2);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다음 영화 랭킹 페이지 만들기</title>
+    <style>
+      #wrap {
+        /* 화면이 움직여도 가운데 고정 */
+        margin: 0 auto;
+        padding: 0;
+        width: 1100px;
+      }
+
+      #header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      img{
+        margin-top: 30px;
+      }
+
+      #header_top1 {
+        display: flex;
+      }
+
+      #header_top2 {
+        margin-top: 30px;
+      }
+
+      #movie {
+        display: flex;
+      }
+
+      #movie h4 {
+        font-size: 15px;
+        color: #919191b9;
+        padding: 7px;
+      }
+
+      #header_top2 a {
+        border: 1px solid #E4E4E4;
+        font-size: 12px;
+
+        text-decoration: none;
+        color: black;
+        padding: 7px;
+      }
+
+      #login {
+        border: 3px sol;
+        text-decoration: none;
+        border: 1px solid #e4e4e4;
+        width: 50px;
+        height: 22px;
+
+        margin-top: 25px;
+
+        font-size: 12px;
+        text-align: center;
+        line-height: 25px;
+        color: black;
+      }
+
+      .dropbtn {
+        color: gray;
+      
+        display: block;
+      }
+
+      .dropbtn:hover {
+        color: black;
+      }
+
+      #header_bottom {
+        /* 다른 요소와 겹치기 가능 */
+        position: relative;
+        display:flex;
+
+        justify-content: center;
+      }
+
+      .dropup {
+        display: block;
+      }
+
+      .dropup-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        bottom: 5px;
+        margin-left: 20px;
+    
+      }
+
+      .dropup-content a {
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .dropup-content a:hover {
+        color: red;
+      }
+
+      .dropup:hover .dropup-content {
+        display: inline-block;
+      }
+
+      button {
+        border-style: none;
+        background-color: white;
+        padding: 16px;
+      }
+
+
+      ol {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+
+        display: flex;
+      }
+
+      .movie-poster {
+        width: 204px;
+        height: 298px;
+        padding: 5px;
+
+        position: relative;
+        justify-content: center;
+      }
+
+      #rank {
+        position: absolute;
+        background: url("ico_movie_230210.png") no-repeat 0 0;
+
+      }
+
+      .img {
+        border-radius: 8px;
+
+        opacity: 1;
+        display: block;
+        backface-visibility: hidden;
+
+        height: auto;
+        transition: 0.5s ease;
+        width: 100%;
+        margin: 0;
+      }
+
+      .middle {
+        transition: 0.5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+      }
+
+      .movie-poster:hover .img {
+        opacity: 0.3;
+      }
+
+      .movie-poster:hover .middle {
+        opacity: 1;
+      }
+
+      .text{
+        color: white;
+        font-size: 12px;
+      }
+
+      .text-content {
+        padding: 5px
+      }
+
+      .text-content a{
+        font-size: 15px;
+        text-decoration: none;
+        color: black;
+        
+      }
+
+      .text-in span {
+        font-size: 13px;
+        color: black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+      <div id="header_top1">
+        <img src="logo_daum.png" width="44px" height="18px" />
+        <div id="movie">
+          <h4>뉴스</h4>
+          <h4>연애</h4>
+          <h4>스포츠</h4>
+          <h4>자동차</h4>
+        </div>
+      </div>
+      <div id="header_top2">
+        <a href="#">로그인</a>
+      </div>
+    </div>
+      <hr />
+
+      <div id="header_bottom">
+        <div class="dropup">
+          <button class="dropbtn"><h1>홈</h1></button>
+        </div>
+
+        <div class="dropup">
+          <button class="dropbtn"><h1>랭킹</h1></button>
+          <div class="dropup-content">
+            <a href="#">예매순위</a>
+            <a href="#">박스오피스</a>
+            <a href="#">OTT</a>
+         </div>
+        </div>
+
+        <div class="dropup">
+          <button class="dropbtn"><h1>상영/예정작</h1></button>
+          <div class="dropup-content">
+            <a href="#">영화관</a>
+            <a href="#">넷플릭스</a>
+            <a href="#">왓챠</a>
+          </div>
+        </div>
+
+        <div class="dropup">
+          <button class="dropbtn"><h1>콘텐츠</h1></button>
+          <div class="dropup-content">
+            <a href="#">영화뉴스</a>
+            <a href="#">매거진</a>
+            <a href="#">브런치스토리</a>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </ul>
+
+      
+      <div id="main">
+        <h2>예매 순위</h2>
+        <div class="movie-list">
+          <ol>
+            <li>
+              <div class="movie-poster">
+                <img src="movie1.jpg" class="img" alt="오펜하이머" />
+                <span id="rank"></span>
+                <div class="middle">
+                  <div class="text">
+                    “나는 이제 죽음이요, 세상의 파괴자가 되었다.” 세상을 구하기
+                    위해 세상을 파괴할 지도 모르는 선택을 해야 하는 천재
+                    과학자의 핵개발 프로젝트.
+                  </div>
+                </div>
+                <div class="text-content">
+                  <a href="#"><b>오펜하이머</b></a>
+                <div class="text-in">
+                    <span>평점</span>
+                    <span style="color: red;">7.5</span>
+                    <span>예매율 61.9%</span><br>
+                    <span style="color: gray;">개봉 23.08.15</span>
+                </div>
+              </div>
+                
+              </div>
+            </li>
+            <li>
+              <div class="movie-poster">
+                <img src="movie2.jpg" class="img" alt="콘크리트 유토피아" />
+                <div class="middle">
+                  <div class="text">“아파트는 주민의 것”</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="movie-poster">
+                <img src="movie3.jpg" class="img" alt="달짝지근해:7510" />
+              </div>
+            </li>
+            <li>
+              <div class="movie-poster">
+                <img src="movie4.jpg" class="img" alt="보호자" />
+              </div>
+            </li>
+            <li>
+              <div class="movie-poster">
+                <img src="movie5.jpg" class="img" alt="밀수" />
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

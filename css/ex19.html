@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 크기 단위</title>
+    <!-- 크기 단위 : PX 픽셀,  em 배수, % 백분율 -->
+    <!-- 0은 단위 문자를 붙이지 X ex)0px, 0em, 0% => 0 -->
+    <!-- 1이상은 단위 문자 붙이지 O ex) 1px, 1em, 1% -->
+    <style>
+      /* 기본 폰트 크기는 16px */
+      p:nth-child(1) {
+      }
+      p:nth-child(2) {
+        font-size: 8px;
+      }
+      p:nth-child(3) {
+        font-size: 16px;
+      }
+      p:nth-child(4) {
+        font-size: 24px;
+      }
+      p:nth-child(5) {
+        font-size: 32px;
+      }
+
+      p:nth-child(1) {
+      }
+      p:nth-child(2) {
+        font-size: 1em;
+      }
+      p:nth-child(3) {
+        font-size: 1.5em;
+      }
+      p:nth-child(4) {
+        font-size: 2em;
+      }
+      p:nth-child(5) {
+        font-size: 3em;
+      }
+
+      p:nth-child(1) {
+      }
+      p:nth-child(2) {
+        font-size: 100%;
+      }
+      p:nth-child(3) {
+        font-size: 150%;
+      }
+      p:nth-child(4) {
+        font-size: 200%;
+      }
+      p:nth-child(5) {
+        font-size: 500%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>문단 태그 P입니다</p>
+    <p>문단 태그 P입니다</p>
+    <p>문단 태그 P입니다</p>
+    <p>문단 태그 P입니다</p>
+    <p>문단 태그 P입니다</p>
+  </body>
+</html>

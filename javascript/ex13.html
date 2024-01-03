@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>JS 연습문제</title>
+    <script>
+      //1. 비교연산자 : < <= > >= == !=
+      //  1) 20은 30보다 작은지 true/false로 출력하시오.
+      //  2) 20은 30보다 같거나 작은지 true/false로 출력하시오.
+      console.log(20 < 30);
+      console.log(20 <= 30);
+      //2. 논리연산자 : AND OR NOT
+      //    다음 로직의 결과를 true/false로 출력하시오.
+      //  1) 10은 20보다 작으면서(~이고), 10은 5보다 큰가?
+      //  2) 123의 일의 자릿수는 3인가?
+      //  3) 5는 1보다 크거나 10보다 작은가?
+      console.log(10 < 20 && 10 > 5);
+      console.log(123 % 10 == 3);
+      console.log(5 > 1 || 5 < 10);
+
+      //3. 논리연산자를 중간에 이용하여, false가 출력되도록 하시오.
+      // console.log(true && false && false && true);
+      //   true가 출력되도록 하시오.
+      console.log(true && false == false && true);
+
+      //4. 연산자 우선순위를 조정하여(소괄호)
+      //   11이 출력되도록 하시오.
+      console.log(10 - 4 / ((2 - 4) * 2));
+      console.log((10 - 4) / 2 + 4 * 2);
+
+      //5. prompt함수로
+      //  백의 자리, 십의 자리, 일의 자리 숫자3개를 입력받고,
+      //  3개의 숫자를 합하여 출력하시오.
+      // 예) 321입력 2입력 5입력 => 325
+      let num1 = prompt("숫자를 입력하세요.");
+      let num2 = prompt("숫자를 입력하세요.");
+      let num3 = prompt("숫자를 입력하세요.");
+      let Num1 = Number(num1) % 10;
+      let Num2 = Number(num2) % 10;
+      let Num3 = Number(num3) % 10;
+      console.log(Num1 * 100 + Num2 * 10 + Num3);
+    </script>
+  </head>
+  <body></body>
+</html>

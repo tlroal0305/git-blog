@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>상품목록 조회</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/admin_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="flex_center admin_title" style=>
+          <h3>키오스크 관리자 화면</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 admin_side">
+            <div class="admin_side_menu">
+                <button onclick="click_member();" id="menu_member">회원관리</button>
+                <button onclick="click_item();" id="menu_item" class="menu_height">상품관리</button>
+                <button onclick="click_order();" id="menu_order">주문관리</button>
+            </div>
+        </div>
+        <div class="col-10 admin_main">
+            <h3 class="flex_center">상품목록</h3>
+            <span id="member_count" th:text="|총 ${count}개의 상품이 있습니다.|">총 3개의 상품이 있습니다.</span>
+            <table class="table table-striped">
+            <tr class="table_title">
+                <td>번호</td>
+                <td>이름</td>
+                <td>이미지</td>
+                <td>카테고리</td>
+                <td>가격</td>
+                <td>추천</td>
+                <td>수정</td>
+                <td>삭제</td>
+            </tr>
+            <tr th:each="item, status:${ list }">
+                <td><span th:text="${status.count}"></span></td>
+                <td><span th:text="${item.itemName}"></span></td>
+                <td>
+                  <img class="admin_item_img" th:src="${item.itemImageUrl}">
+                </td>
+                <td><span th:text="${item.itemCate}"></span></td>
+                <td><span th:text="${item.itemPrice}"></span></td>
+                <td><span th:text="${item.itemRecommend}"></span></td>
+                <td><button class="btn btn-primary" th:onclick="|func_item_update(${item.itemNo});|">수정</button></td>
+                <td><button class="btn btn-danger" th:onclick="|func_item_delete(${item.itemNo});|">삭제</button></td>
+            </tr>
+            </table>
+        </div>
+      </div>
+    </div>
+    <script src="./js/admin.js"></script>
+  </body>
+</html>

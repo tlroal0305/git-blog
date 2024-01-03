@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습문제</title>
+    <script>
+      //DM으로 제출
+      //1. for문 if문을 사용하여
+      // 1부터 20까지 1씩 증가하는 반복문에서 i가 2의 배수일때만
+      // 출력하시오.
+      for (i = 1; i < 21; i++) {
+        if (i % 2 == 0) {
+          console.log(i);
+        }
+      }
+
+      //2. 1부터 100까지 합을 구하시고 출력하시오.
+      let sum = 0;
+
+      for (i = 1; i <= 100; i++) {
+        sum = sum + i;
+      }
+      console.log(sum);
+
+      //3. 1부터 100까지 소수의 갯수를 출력하시오.
+      //   소수 : 약수가 1과 자신인 수
+      //   약수 : 나누어 떨어지는 수
+      let count = 0;
+
+      for (i = 1; i <= 100; i++) {
+        for (j = 1; j <= i; j++) {
+          if (i % j == 0) {
+            // 약수
+            count++;
+          }
+
+          if (count == 2) {
+            console.log(count);
+          }
+        }
+      }
+
+      //4. 랜덤수를 1~100사이의 정수 100개 발생시키고, 그 수를 출력한 다음
+      //   최소수와 최대수를 출력하시오.
+      //  Math.random() : 0.0 ~ 9.9999... 의 랜덤한 실수를 반환
+      min = Number.MAX_SAFE_INTEGER;
+      max = Number.MIN_SAFE_INTEGER;
+
+      for (i = 1; i <= 100; i++) {
+        let randomNum1 = Math.floor(Math.random() * 100) + 1;
+
+        if (randomNum1 < min) {
+          min = randomNum1;
+        }
+
+        if (randomNum1 > max) {
+          max = randomNum1;
+        }
+      }
+
+      console.log("최소수: " + min);
+      console.log("최대수: " + max);
+
+      //5. 이번주 행운의 로또 숫자 6개를 출력하시오.
+      //   1부터 45까지의 랜덤한 수 6개를 뽑되
+      //   반복허용하지 않음. 재추첨 로직을 넣으시오.
+      let randomArray = [];
+
+      for (i = 0; i < 6; i++) {
+        let randomNum2 = Math.floor(Math.random() * 45) + 1;
+
+        if (!randomArray.includes(randomNum2)) {
+          randomArray.push(randomNum2);
+        }
+      }
+      console.log(randomArray);
+
+      //배열 없이
+
+      //6. 주사위 2개 10번 던져서, 두 주사위 수를 합산한 다음
+      //   최소수와 최대수를 출력하시오.
+      min = Number.MAX_SAFE_INTEGER;
+      max = Number.MIN_SAFE_INTEGER;
+
+      for (i = 1; i <= 10; i++) {
+        let dice1 = Math.floor(Math.random() * 6) + 1;
+        let dice2 = Math.floor(Math.random() * 6) + 1;
+
+        let sum = 0;
+        sum = dice1 + dice2;
+        console.log("주사위 합 : " + sum);
+
+        if (sum < min) {
+          min = sum;
+        }
+
+        if (sum > max) {
+          max = sum;
+        }
+      }
+
+      console.log("최소수: " + min);
+      console.log("최대수: " + max);
+    </script>
+  </head>
+  <body></body>
+</html>

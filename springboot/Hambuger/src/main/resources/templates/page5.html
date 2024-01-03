@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사이드 메뉴 추천</title>
+
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+          body {
+            background-color: rgb(255, 198, 12);
+
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        body {
+          width: 600px;
+        }
+
+        #page5_header {
+          background-color: whitesmoke;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          padding: 10px;
+        }
+
+        #header_left {
+          font-weight: bold;
+          margin-top: 5px;
+        }
+
+        #page5_body {
+          width: 600px;
+          height: 700px;
+        }
+
+        button {
+          /* 버튼 스타일 초기화 */
+          all: unset;
+        }
+
+        #page5_main {
+          background-color: white;
+
+          width: 100%;
+          height: 800px;
+
+          margin-top: 25px;
+        }
+
+        #main_header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          padding: 55px;
+        }
+
+        #main_header p {
+          font-size: 22px;
+          font-weight: bold;
+          color: rgb(189, 23, 23);
+        }
+
+        #noBtn {
+          background-color: rgb(189, 23, 23);
+          color: white;
+          border-radius: 10px;
+          padding: 7px;
+        }
+
+        .menus {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .menu_img {
+          padding: 20px;
+        }
+
+        #page5_footer {
+          background-color: rgb(240, 239, 239);
+
+          width: 100%;
+          height: 100px;
+        }
+
+        #next {
+          display: flex;
+          justify-content: center;
+        }
+
+        .next_Btn {
+          background-color: rgb(189, 23, 23);
+          border-radius: 5px;
+          color: whitesmoke;
+
+          width: 120px;
+          height: 35px;
+          text-align: center;
+          line-height: 35px;
+
+          margin: 30px 5px;
+        }
+
+        .menu_img {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .menu_img.checked {
+          position: relative;
+        }
+
+        .menu_img.checked::before {
+          content: "✔"; /* 체크 표시 내용 */
+          position: absolute;
+          right: 10px;
+          font-size: 100px;
+          color: green;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="햄버거파비콘" />
+</head>
+<body>
+<div id="page5_body">
+    <div id="page5_header">
+        <div id="header_right">
+            <img src="햄버거로고 배경제거.png" width="100" height="33" />
+        </div>
+        <div id="header_left">
+            <div id="HOME">HOME</div>
+        </div>
+    </div>
+
+    <div id="page5_main">
+        <div id="main_header">
+            <p>함께 즐기면 더욱 좋습니다!</p>
+            <button id="noBtn">선택안함</button>
+        </div>
+        <div id="recom_menu">
+            <div class="menus">
+                <div class="menu_img">
+                    <img class="buger_img" src="사이드메뉴1.png" height="95px" />
+                    <div class="menu_name">맥플러리</div>
+                    <div class="menu_price">\1,500</div>
+                </div>
+                <div class="menu_img">
+                    <img
+                            class="buger_img"
+                            src="사이드메뉴2.png"
+                            width="85px"
+                            height="95px"
+                    />
+                    <div class="menu_name">아이스콘</div>
+                    <div class="menu_price">\1,500</div>
+                </div>
+                <div class="menu_img">
+                    <img src="사이드메뉴3.png" width="85px" height="95px" />
+                    <div class="menu_name">맥윙</div>
+                    <div class="menu_price">\2,000</div>
+                </div>
+                <div class="menu_img">
+                    <img src="사이드메뉴4.png" width="85px" height="95px" />
+                    <div class="menu_name">애플파이</div>
+                    <div class="menu_price">\1,500</div>
+                </div>
+            </div>
+
+            <div id="menu3">
+                <div class="menus">
+                    <div class="menu_img">
+                        <img
+                                class="buger_img"
+                                src="코카콜라.png"
+                                width="85px"
+                                height="95px"
+                        />
+                        <div class="menu_name">코카콜라</div>
+                        <div class="menu_price">\2,000</div>
+                    </div>
+                    <div class="menu_img">
+                        <img
+                                class="buger_img"
+                                src="사이다.png"
+                                width="85px"
+                                height="95px"
+                        />
+                        <div class="menu_name">사이다</div>
+                        <div class="menu_price">\2,000</div>
+                    </div>
+                    <div class="menu_img">
+                        <img src="환타.png" width="85px" height="95px" />
+                        <div class="menu_name">환타</div>
+                        <div class="menu_price">\2,000</div>
+                    </div>
+                    <div class="menu_img">
+                        <img src="펩시.png" width="85px" height="95px" />
+                        <div class="menu_name">펩시</div>
+                        <div class="menu_price">\2,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page5_footer">
+        <div id="next">
+            <div class="next_Btn">이전으로</div>
+            <div class="next_Btn" style="background-color: green">다음</div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let next_Btn = document.getElementsByClassName("next_Btn");
+
+    for (let i = 0; i < next_Btn.length; i++) {
+      next_Btn[i].addEventListener("click", function () {
+        if (i == 0) {
+          window.location.href = "page1.html";
+        } else if (i == 1) {
+          window.location.href = "page4.html";
+        }
+      });
+    }
+
+    let noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("click", function () {
+      window.location.href = "page4.html";
+    });
+
+    // 체크된 이미지 getArrMenu에 저장
+    let menu_img = document.getElementsByClassName("menu_img");
+
+    for (let i = 0; i < menu_img.length; i++) {
+      menu_img[i].addEventListener("click", function () {
+        // 클릭한 이미지 요소의 체크 표시를 관리하는 클래스 추가/제거
+        menu_img[i].classList.toggle("checked");
+
+        // 로컬 스토리지에서 데이터 불러오기
+
+        let setArrMenu = localStorage.getItem("arrMenu");
+        let getArrMenu = JSON.parse(setArrMenu);
+
+        let clicked_img = menu_img[i].querySelector("img").src;
+        //textContent -> 텍스트 내용을 설정하거나 가져오는 속성
+        let clicked_name = menu_img[i].querySelector(".menu_name").textContent; //textContent
+        let clicked_price =
+          menu_img[i].querySelector(".menu_price").textContent;
+
+        let index = 0;
+        let found = false;
+        // 전체 순환
+        //  -> arrMenu의 각 요소를 하나씩 반복하면서 변수 menu에 대입하여 수행하는 반복문
+        for (let menu of getArrMenu) {
+          //{ src: "menu_img", count: 1 }
+          if (menu.src === clicked_img) {
+            let count = menu.count + 1;
+
+            // 원래 있던 값을 새로운 값으로 변경
+            getArrMenu.splice(index, 1, {
+              src: clicked_img,
+              count: count,
+              name: clicked_name, //클릭된 메뉴의 이름 설정
+              price: clicked_price, //클릭된 메뉴의 이름 설정,
+            });
+            found = true;
+            break;
+          }
+          index++;
+        }
+
+        if (found == false) {
+          getArrMenu.push({
+            src: clicked_img,
+            count: 1,
+            name: clicked_name,
+            price: clicked_price,
+          });
+        }
+
+        let arrMenuString = JSON.stringify(getArrMenu); //arrMenu를 JSON형식의 문자열로 변환
+        localStorage.setItem("arrMenu", arrMenuString);
+      });
+    }
+</script>
+</html>

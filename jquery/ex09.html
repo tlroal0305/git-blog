@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax과 fetch</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      //JSON.parse()함수 : string객체
+      //JSON.stringify()함수 : json객체(KV)를 string타입(문자열로 변환)
+      fetch("https://jsonplaceholder.typicode.com/comments")
+        .then((response) => {
+          //response -> HTTP 응답 객체
+          console.log(response);
+          return response.json();
+        })
+        .then((json) => {
+          //json -> 순수 데이터
+          console.log(json);
+          console.log(JSON.stringify(json));
+        });
+
+      //더미 데이터를 응답해주는 임시 서버 사용
+      // jsonplaceholder 사이트
+      //  https://jsonplaceholder.typicode.com/comments
+      // $(function () {
+      //   $.ajax({
+      //     type: "get",
+      //     dataType: "json", //내가 보내는
+      //     url: "https://jsonplaceholder.typicode.com/comments",
+      //     mimeType: "application/json", //내가 전송받는
+      //     success: function (data) {
+      //       console.log(data);
+      //       console.log(JSON.stringify(data));
+      //       $.each(data, function (index, item) {
+      //         //data가 index(500)수만큼 돈다
+      //         console.log(index + ":" + item.name);
+      //       });
+      //     },
+      //     error: function () {
+      //       console.log("통신 오류");
+      //     },
+      //   });
+      // });
+    </script>
+  </head>
+  <body></body>
+</html>

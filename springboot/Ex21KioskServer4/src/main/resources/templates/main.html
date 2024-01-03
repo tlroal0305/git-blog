@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Mcdonald kiosk</title>
+    <link
+      rel="icon"
+      href="https://mblogthumb-phinf.pstatic.net/20160427_137/ppanppane_1461740011817NGCJu_PNG/%B8%C6%B5%B5%B3%AF%B5%E5_%B7%CE%B0%ED_%283%29.png?type=w420"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/main_styles.css" />
+  </head>
+  <body>
+    <audio src="./audio/Touch_Order.mp3" id="Touch_Order"></audio>
+
+    <div class="kiosk-box">
+      <div class="wrap">
+        <div class="in-box">
+          <img
+            src="https://i.pinimg.com/564x/d6/4b/bf/d64bbf0b7b8eb8f835f6892f1e58490b.jpg"
+            alt=""
+            id="changingImage"
+          />
+        </div>
+        <div class="under-box">
+          <img src="./img/Mcdonald_Logo.png" alt="" />
+          <button id="selectButton">주문하시려면 터치하세요.</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/Kiosk.js"></script>
+  </body>
+</html>

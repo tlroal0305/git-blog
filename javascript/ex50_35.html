@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let selec = prompt().split(" ");
+
+      let bumcount = 0;
+      let onecount = 0;
+      let jincount = 0;
+
+      for (let i = 0; i < selec.length; i++) {
+        if (selec[i] === "원범") {
+          bumcount++;
+        } else if (selec[i] === "혜원") {
+          onecount++;
+        } else if (selec[i] === "유진") {
+          jincount++;
+        }
+      }
+
+      if (bumcount > onecount && bumcount > jincount) {
+        console.log("원범(이)가 총 " + bumcount + "표로 반장 당첨!");
+      } else if (onecount > bumcount && onecount > jincount) {
+        console.log("혜원(이)가 총 " + onecount + "표로 반장 당첨!");
+      } else if (jincount > bumcount && jincount > onecount) {
+        console.log("유진(이)가 총 " + jincount + "표로 반장 당첨!");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

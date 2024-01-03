@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function bubble(arr) {
+        let result = arr.slice();
+
+        for (let i = 0; i < result.length - 1; i++) {
+          for (let j = 0; j < result.length - i; j++) {
+            if (result[j] > result[j + 1]) {
+              let temp = result[j];
+              result[j] = result[j + 1];
+              result[j + 1] = temp;
+            }
+          }
+        }
+        return result;
+      }
+
+      const items = prompt("입력해주세요.")
+        .split(" ")
+        .map((n) => {
+          return parseInt(n, 10);
+        });
+
+      console.log(bubble(items));
+    </script>
+  </head>
+  <body></body>
+</html>

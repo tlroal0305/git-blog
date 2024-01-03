@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>overflow속성</title>
+    <!-- visible : 기본값 - overflow 속성을 생략하거나, overflow 속성값을 visible로 지정해줄 경우 컨텐츠가 경계선 밖으로 삐져나오는 것을 볼 수 있는 -->
+    <!-- hidden : HTML 요소 밖으로 삐져나오는 컨텐츠를 숨겨버릴 수 있음 -->
+    <!-- auto : 컨텐츠의 크기가 주어진 공간을 넘어가는 경우에만 스크롤바가 생김.-->
+    <!-- scroll : 무조건 스크롤바가 생김 -->
+    <style>
+      .lyrics {
+        overflow: visible;
+        width: 200px;
+        height: 50px;
+        border: 3px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lyrics">
+      동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화
+      삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세.
+    </div>
+
+    <div class="lyrics">반짝반짝 작은 별 아름답게 비치네.</div>
+  </body>
+</html>
